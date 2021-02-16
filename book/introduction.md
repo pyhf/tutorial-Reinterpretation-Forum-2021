@@ -1,4 +1,4 @@
-# [ATLAS Exotics + SUSY Workshop 2020 `pyhf` Tutorial](https://indico.cern.ch/event/898965/sessions/355806/)
+# [LHC Reinterpretation Forum Workshop 2021 `pyhf` Tutorial](https://indico.cern.ch/event/982553/contributions/4219487/)
 
 ## Welcome!
 
@@ -6,9 +6,10 @@
 <a href="https://github.com/scikit-hep/pyhf"><img src="https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/pyhf-logo-small.png"></a>
 </p>
 
-Welcome to the `pyhf` tutorial given at the [ATLAS Exotics + SUSY Workshop 2020](https://indico.cern.ch/event/898965/)!
-We'll first point you towards our documentation website ([scikit-hep.org/pyhf/](https://scikit-hep.org/pyhf/)) and recommend that you visit it for much more detailed explanations and examples.
+Welcome to the `pyhf` tutorial given at the [LHC Reinterpretation Forum Workshop 2021](https://indico.cern.ch/event/982553)!
+We'll first point you towards our documentation website ([pyhf.readthedocs.io/](https://pyhf.readthedocs.io/)) and recommend that you visit it for much more detailed explanations and examples.
 Let's dive right in.
+
 
 We won't review the full pedagogy of `HistFactory`, so instead we'll point you to
 the [`pyhf` talk at SciPy 2020](https://github.com/matthewfeickert/talk-SciPy-2020).
@@ -116,7 +117,7 @@ The 'minuit' extra installs [`iminuit`](https://iminuit.readthedocs.io/).
 ````
 
 
-See our [installation docs](https://scikit-hep.org/pyhf/installation.html) for more information about installation options.
+See our [installation docs](https://pyhf.readthedocs.io/en/v0.6.0/installation.html) for more information about installation options.
 
 ### Dependencies for this tutorial
 
@@ -132,7 +133,7 @@ For more information about some of the theoretical topics covered with `pyhf`, s
 
 ### Questions and Further Information on `pyhf`
 
-For more information on `pyhf` please check the [documentation website](https://scikit-hep.org/pyhf/).
-Additionally, if you have a question about the use of `pyhf` not covered in the documentation, please ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/pyhf) with the `[pyhf]` tag, which the `pyhf` dev team watches.
+For more information on `pyhf` please check the [documentation website](https://pyhf.readthedocs.io/).
+Additionally, if you have a question about the use of `pyhf` not covered in the documentation, please ask a question the `pyhf` [GitHub Discussions](https://github.com/scikit-hep/pyhf/discussions).
 If you believe you have found a bug in `pyhf`, please report it in the [GitHub Issues](https://github.com/scikit-hep/pyhf/issues/new?template=Bug-Report.md&labels=bug&title=Bug+Report+:+Title+Here).
 If you're interested in getting updates from the `pyhf` dev team and release announcements you can join the [`pyhf-announcements` mailing list](https://groups.google.com/group/pyhf-announcements/subscribe) (through Google Groups).
