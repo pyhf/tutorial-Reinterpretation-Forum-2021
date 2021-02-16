@@ -131,3 +131,4 @@ dmypy.json
 # build artifacts
 _build
 *.tar.gz
+book/data/
