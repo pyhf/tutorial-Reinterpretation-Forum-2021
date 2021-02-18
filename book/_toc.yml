@@ -3,14 +3,22 @@
 
 - part: Get started
   chapters:
-  - file: IntroToHiFa
-  - file: WorkspaceManipulations
-  - file: SimpleModel
+  - file: HelloWorld
   - file: SimpleWorkspace
-  - file: Modifiers
   - file: SerializationAndPatching
-  - file: PullPlot
-  - file: Combinations
+
+- part: Common use and applications
+  chapters:
+    - file: PullPlot
+    - file: Toys
+    - file: Combinations
+
+- part: More Information
+  chapters:
+    - file: IntroToHiFa
+    - file: WorkspaceManipulations
+    - file: Modifiers
+    - file: UsingCalculators
 
 - part: Learn Fundamentals
   chapters:
