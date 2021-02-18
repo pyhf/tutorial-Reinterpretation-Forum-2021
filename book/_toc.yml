@@ -7,7 +7,7 @@
   - file: SimpleWorkspace
   - file: SerializationAndPatching
 
-- part: Odds-and-Ends
+- part: Common use and applications
   chapters:
     - file: PullPlot
     - file: Toys
