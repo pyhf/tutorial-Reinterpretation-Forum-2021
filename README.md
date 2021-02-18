@@ -8,6 +8,9 @@
 [![Deploy Jupyter Book](https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/workflows/Deploy%20Jupyter%20Book/badge.svg?branch=main)](https://pyhf.github.io/tutorial-Reinterpretation-Forum-2021/)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyhf/tutorial-Reinterpretation-Forum-2021/main)
 
+[![DOI](https://zenodo.org/badge/339543089.svg)](https://zenodo.org/badge/latestdoi/339543089)
+
+
 ## Setup
 
 In a Python virtual environment run the following
