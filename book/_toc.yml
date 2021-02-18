@@ -6,7 +6,6 @@
   - file: HelloWorld
   - file: SimpleWorkspace
   - file: SerializationAndPatching
-  - file: Combinations
 
 - part: Odds-and-Ends
   chapters:
