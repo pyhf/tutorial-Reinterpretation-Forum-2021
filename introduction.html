@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial &#8212; LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="My First Likelihood" href="HelloWorld.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="#">
+   LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Get started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="HelloWorld.html">
+   My First Likelihood
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SimpleWorkspace.html">
+   Workspace World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SerializationAndPatching.html">
+   Using HEPData
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Common use and applications
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="PullPlot.html">
+   Making a Pull Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Toys.html">
+   Playing with Toys
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Combinations.html">
+   Performing a Combination
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  More Information
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="IntroToHiFa.html">
+   HistFactory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WorkspaceManipulations.html">
+   Workspace Manipulations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Modifiers.html">
+   Modifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UsingCalculators.html">
+   Using Calculators
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Learn Fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="InterpolationCodes.html">
+   Piecewise Linear Interpolation
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/introduction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/issues/new?title=Issue%20on%20page%20%2Fintroduction.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/edit/main/book/introduction.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#welcome">
+   Welcome!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-a-virtual-environment">
+     Make a Virtual Environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-pyhf">
+     Getting pyhf
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-extras">
+     Installation Extras
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dependencies-for-this-tutorial">
+     Dependencies for this tutorial
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics-references">
+     Statistics References
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#questions-and-further-information-on-pyhf">
+     Questions and Further Information on
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pyhf
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lhc-reinterpretation-forum-workshop-2021-pyhf-tutorial">
+<h1><a class="reference external" href="https://indico.cern.ch/event/982553/contributions/4219487/">LHC Reinterpretation Forum Workshop 2021 <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> Tutorial</a><a class="headerlink" href="#lhc-reinterpretation-forum-workshop-2021-pyhf-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="welcome">
+<h2>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h2>
+<p align="center">
+<a href="https://github.com/scikit-hep/pyhf"><img src="https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/pyhf-logo-small.png"></a>
+</p>
+<p>Welcome to the <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> tutorial given at the <a class="reference external" href="https://indico.cern.ch/event/982553">LHC Reinterpretation Forum Workshop 2021</a>!
+We’ll first point you towards our documentation website (<a class="reference external" href="https://pyhf.readthedocs.io/">pyhf.readthedocs.io/</a>) and recommend that you visit it for much more detailed explanations and examples.
+Let’s dive right in.</p>
+<p>We won’t review the full pedagogy of <code class="docutils literal notranslate"><span class="pre">HistFactory</span></code>, so instead we’ll point you to
+the <a class="reference external" href="https://github.com/matthewfeickert/talk-SciPy-2020"><code class="docutils literal notranslate"><span class="pre">pyhf</span></code> talk at SciPy 2020</a>.</p>
+<!-- http://www.get-youtube-thumbnail.com/ -->
+<p><a class="reference external" href="https://youtu.be/FrH9s3eB6fU"><img alt="SciPy 2020 talk YouTube" src="https://i3.ytimg.com/vi/FrH9s3eB6fU/maxresdefault.jpg" /></a></p>
+<p>Instead, let’s move to looking at the <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> API right away.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="make-a-virtual-environment">
+<h3>Make a Virtual Environment<a class="headerlink" href="#make-a-virtual-environment" title="Permalink to this headline">¶</a></h3>
+<div class="tabbed-set docutils">
+<input checked="checked" id="cc6944ff-c68c-4c56-9c4d-604b75122a68" name="d88994e8-a6e0-483c-8679-c6da52b6ae5a" type="radio">
+</input><label class="tabbed-label" for="cc6944ff-c68c-4c56-9c4d-604b75122a68">
+Locally</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m venv pyhf-tutorial
+$ source pyhf-tutorial/bin/activate
+(pyhf-tutorial) $ python -m pip install -U pip setuptools wheel
+</pre></div>
+</div>
+</div>
+<input id="7f70f0ef-64cc-488c-9486-126c335707a5" name="d88994e8-a6e0-483c-8679-c6da52b6ae5a" type="radio">
+</input><label class="tabbed-label" for="7f70f0ef-64cc-488c-9486-126c335707a5">
+On CC7 lxplus/tier-3</label><div class="tabbed-content docutils">
+<p>First we need to set up the ‘views’ with the right paths to ensure we use the correct <code class="docutils literal notranslate"><span class="pre">pip</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+$ source $ATLAS_LOCAL_ROOT_BASE/user/atlasLocalSetup.sh
+$ lsetup &quot;views LCG_96bpython3 x86_64-centos7-gcc8-opt&quot;
+$ export PYTHONPATH=/cvmfs/sft.cern.ch/lcg/views/LCG_96bpython3/x86_64-centos7-gcc8-opt/python:/cvmfs/sft.cern.ch/lcg/views/LCG_96bpython3/x86_64-centos7-gcc8-opt/lib
+</pre></div>
+</div>
+<p>Then we can go ahead and create the virtual environment</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m venv pyhf-tutorial
+$ source pyhf-tutorial/bin/activate
+(pyhf-tutorial) $ python -m pip install -U pip setuptools wheel
+</pre></div>
+</div>
+</div>
+<input id="b162696f-1586-424f-ae34-4eb0c7b9ed19" name="d88994e8-a6e0-483c-8679-c6da52b6ae5a" type="radio">
+</input><label class="tabbed-label" for="b162696f-1586-424f-ae34-4eb0c7b9ed19">
+On SLC6 lxplus/tier-3</label><div class="tabbed-content docutils">
+<p>First we need to set up the ‘views’ with the right paths to ensure we use the correct <code class="docutils literal notranslate"><span class="pre">pip</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+$ source $ATLAS_LOCAL_ROOT_BASE/user/atlasLocalSetup.sh
+$ lsetup &quot;views LCG_96bpython3 x86_64-slc6-gcc8-opt&quot;
+$ export PYTHONPATH=/cvmfs/sft.cern.ch/lcg/views/LCG_96bpython3/x86_64-slc6-gcc8-opt/python:/cvmfs/sft.cern.ch/lcg/views/LCG_96bpython3/x86_64-slc6-gcc8-opt/lib
+</pre></div>
+</div>
+<p>Then we can go ahead and create the virtual environment</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m venv pyhf-tutorial
+$ source pyhf-tutorial/bin/activate
+(pyhf-tutorial) $ python -m pip install -U pip setuptools wheel
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you have a virtual environment set up, you can use <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">pyhf-tutorial/bin/activate</span></code> to get back into it again. Note the prefix <code class="docutils literal notranslate"><span class="pre">(pyhf-tutorial)</span> <span class="pre">$</span></code> on your command line, which indicates that you’re inside a virtual environment named ‘pyhf-tutorial’.</p>
+</div>
+<div class="section" id="getting-pyhf">
+<h3>Getting pyhf<a class="headerlink" href="#getting-pyhf" title="Permalink to this headline">¶</a></h3>
+<p>If you haven’t already, make a new Python 3 virtual environment and then install <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> from either <a class="reference external" href="https://pypi.org/project/pyhf/">PyPI</a> with <code class="docutils literal notranslate"><span class="pre">pip</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(pyhf-tutorial) $ python -m pip install pyhf
+</pre></div>
+</div>
+<p>or <a class="reference external" href="https://anaconda.org/conda-forge/pyhf">Conda-forge</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(pyhf-tutorial) $ conda config --add channels conda-forge
+(pyhf-tutorial) $ conda install pyhf
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-extras">
+<h3>Installation Extras<a class="headerlink" href="#installation-extras" title="Permalink to this headline">¶</a></h3>
+<p>If you’re installing from PyPI, you can also install with some of the “extras” that will be useful for doing typical HEP analysis workflows with <code class="docutils literal notranslate"><span class="pre">pyhf</span></code>.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="5a427790-35ea-4249-9c49-dd32ffec322c" name="724b8667-f67b-44a3-8067-d9aabb402af1" type="radio">
+</input><label class="tabbed-label" for="5a427790-35ea-4249-9c49-dd32ffec322c">
+Read/Write XML+ROOT</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(pyhf-tutorial) $ python -m pip install pyhf[xmlio]
+</pre></div>
+</div>
+<p>The ‘xmlio’ extra additionally installs <a class="reference external" href="https://github.com/scikit-hep/uproot"><code class="docutils literal notranslate"><span class="pre">uproot</span></code></a> to read <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> files.</p>
+</div>
+<input id="b5a75572-e7a5-47c4-bd5c-5ff758a082e1" name="724b8667-f67b-44a3-8067-d9aabb402af1" type="radio">
+</input><label class="tabbed-label" for="b5a75572-e7a5-47c4-bd5c-5ff758a082e1">
+Use PyTorch and Tensorflow</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(pyhf-tutorial) $ python -m pip install pyhf[torch,tensorflow]
+</pre></div>
+</div>
+<p>The ‘torch’ extra installs <a class="reference external" href="https://pytorch.org/"><code class="docutils literal notranslate"><span class="pre">pytorch</span></code></a> and the ‘tensorflow’ extra installs <a class="reference external" href="https://www.tensorflow.org/"><code class="docutils literal notranslate"><span class="pre">tensorflow</span></code></a>.</p>
+</div>
+<input id="cb8d583f-0108-4c84-919f-756e05ec9e07" name="724b8667-f67b-44a3-8067-d9aabb402af1" type="radio">
+</input><label class="tabbed-label" for="cb8d583f-0108-4c84-919f-756e05ec9e07">
+Using Minuit Optimization</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(pyhf-tutorial) $ python -m pip install pyhf[minuit]
+</pre></div>
+</div>
+<p>The ‘minuit’ extra installs <a class="reference external" href="https://iminuit.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">iminuit</span></code></a>.</p>
+</div>
+</div>
+<p>See our <a class="reference external" href="https://pyhf.readthedocs.io/en/v0.6.0/installation.html">installation docs</a> for more information about installation options.</p>
+</div>
+<div class="section" id="dependencies-for-this-tutorial">
+<h3>Dependencies for this tutorial<a class="headerlink" href="#dependencies-for-this-tutorial" title="Permalink to this headline">¶</a></h3>
+<p>To get all the dependencies needed for this tutorial you can just install from the included <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> in the top level <code class="docutils literal notranslate"><span class="pre">binder/</span></code> directory of <a class="reference external" href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021">the source repository</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(pyhf-tutorial) $ python -m pip install -r binder/requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="statistics-references">
+<h3>Statistics References<a class="headerlink" href="#statistics-references" title="Permalink to this headline">¶</a></h3>
+<p>For more information about some of the theoretical topics covered with <code class="docutils literal notranslate"><span class="pre">pyhf</span></code>, see Kyle Cranmer’s <a class="reference external" href="https://cranmer.github.io/stats-ds-book/intro.html">Statistics and Data Science</a> book.</p>
+</div>
+<div class="section" id="questions-and-further-information-on-pyhf">
+<h3>Questions and Further Information on <code class="docutils literal notranslate"><span class="pre">pyhf</span></code><a class="headerlink" href="#questions-and-further-information-on-pyhf" title="Permalink to this headline">¶</a></h3>
+<p>For more information on <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> please check the <a class="reference external" href="https://pyhf.readthedocs.io/">documentation website</a>.
+Additionally, if you have a question about the use of <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> not covered in the documentation, please ask a question the <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> <a class="reference external" href="https://github.com/scikit-hep/pyhf/discussions">GitHub Discussions</a>.
+If you believe you have found a bug in <code class="docutils literal notranslate"><span class="pre">pyhf</span></code>, please report it in the <a class="reference external" href="https://github.com/scikit-hep/pyhf/issues/new?template=Bug-Report.md&amp;labels=bug&amp;title=Bug+Report+:+Title+Here">GitHub Issues</a>.
+If you’re interested in getting updates from the <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> dev team and release announcements you can join the <a class="reference external" href="https://groups.google.com/group/pyhf-announcements/subscribe"><code class="docutils literal notranslate"><span class="pre">pyhf-announcements</span></code> mailing list</a> (through Google Groups).</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='right-next' id="next-link" href="HelloWorld.html" title="next page">My First Likelihood</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By the pyhf development team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

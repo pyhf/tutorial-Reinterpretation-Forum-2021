@@ -1,0 +1,1432 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playing with Toys &#8212; LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Performing a Combination" href="Combinations.html" />
+    <link rel="prev" title="Making a Pull Plot" href="PullPlot.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Get started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="HelloWorld.html">
+   My First Likelihood
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SimpleWorkspace.html">
+   Workspace World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SerializationAndPatching.html">
+   Using HEPData
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Common use and applications
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="PullPlot.html">
+   Making a Pull Plot
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Playing with Toys
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Combinations.html">
+   Performing a Combination
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  More Information
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="IntroToHiFa.html">
+   HistFactory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WorkspaceManipulations.html">
+   Workspace Manipulations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Modifiers.html">
+   Modifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UsingCalculators.html">
+   Using Calculators
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Learn Fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="InterpolationCodes.html">
+   Piecewise Linear Interpolation
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Toys.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/issues/new?title=Issue%20on%20page%20%2FToys.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/edit/main/book/Toys.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyhf/tutorial-Reinterpretation-Forum-2021/main?urlpath=lab/tree/book/Toys.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/pyhf/tutorial-Reinterpretation-Forum-2021/blob/main/book/Toys.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-model-again">
+   Simple Model (again)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing-revisited">
+   Hypothesis Testing (revisited)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing-low-stats">
+   Hypothesis Testing (low stats)
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="playing-with-toys">
+<h1>Playing with Toys<a class="headerlink" href="#playing-with-toys" title="Permalink to this headline">¶</a></h1>
+<p>As of <code class="docutils literal notranslate"><span class="pre">v0.6.0</span></code>, <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> now supports toys! A lot of kinks have been discovered and worked out and we’re grateful to our ATLAS colleagues for beta-testing this in the meantime. We don’t believe that there may not be any more bugs, but we feel confident that we can release the current implementation.</p>
+<div class="section" id="simple-model-again">
+<h2>Simple Model (again)<a class="headerlink" href="#simple-model-again" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyhf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">pyhf</span><span class="o">.</span><span class="n">simplemodels</span><span class="o">.</span><span class="n">hepdata_like</span><span class="p">(</span>
+    <span class="n">signal_data</span><span class="o">=</span><span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">],</span> <span class="n">bkg_data</span><span class="o">=</span><span class="p">[</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">],</span> <span class="n">bkg_uncerts</span><span class="o">=</span><span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="hypothesis-testing-revisited">
+<h2>Hypothesis Testing (revisited)<a class="headerlink" href="#hypothesis-testing-revisited" title="Permalink to this headline">¶</a></h2>
+<p>And like in the first exercise we did, let’s refresh what the hypothesis test looked like using <span class="math notranslate nohighlight">\(\tilde{q}_\mu\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CLs_obs</span><span class="p">,</span> <span class="n">CLs_exp</span> <span class="o">=</span> <span class="n">pyhf</span><span class="o">.</span><span class="n">infer</span><span class="o">.</span><span class="n">hypotest</span><span class="p">(</span>
+    <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># null hypothesis</span>
+    <span class="p">[</span><span class="mf">52.5</span><span class="p">,</span> <span class="mf">65.0</span><span class="p">]</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">auxdata</span><span class="p">,</span>
+    <span class="n">model</span><span class="p">,</span>
+    <span class="n">test_stat</span><span class="o">=</span><span class="s2">&quot;qtilde&quot;</span><span class="p">,</span>
+    <span class="n">return_expected_set</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      Observed CLs: </span><span class="si">{</span><span class="n">CLs_obs</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">expected_value</span><span class="p">,</span> <span class="n">n_sigma</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">CLs_exp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected CLs(</span><span class="si">{</span><span class="n">n_sigma</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2"> σ): </span><span class="si">{</span><span class="n">expected_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Observed CLs: 0.4856
+Expected CLs(-2 σ): 0.0830
+Expected CLs(-1 σ): 0.1826
+Expected CLs( 0 σ): 0.3702
+Expected CLs( 1 σ): 0.6434
+Expected CLs( 2 σ): 0.8853
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the question is, does the asymptotic approximation hold in this example? The standard assumption is that you have enough “statistics” (meaning enough events) to use the large-N approximation. So let’s use the toy-based calculator instead and compute the same values as above and see if they match in the asymptotic case (we certainly hope they mostly do here!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CLs_obs</span><span class="p">,</span> <span class="n">CLs_exp</span> <span class="o">=</span> <span class="n">pyhf</span><span class="o">.</span><span class="n">infer</span><span class="o">.</span><span class="n">hypotest</span><span class="p">(</span>
+    <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># null hypothesis</span>
+    <span class="p">[</span><span class="mf">52.5</span><span class="p">,</span> <span class="mf">65.0</span><span class="p">]</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">auxdata</span><span class="p">,</span>
+    <span class="n">model</span><span class="p">,</span>
+    <span class="n">test_stat</span><span class="o">=</span><span class="s2">&quot;qtilde&quot;</span><span class="p">,</span>
+    <span class="n">return_expected_set</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">calctype</span><span class="o">=</span><span class="s2">&quot;toybased&quot;</span><span class="p">,</span>
+    <span class="n">ntoys</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      Observed CLs: </span><span class="si">{</span><span class="n">CLs_obs</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">expected_value</span><span class="p">,</span> <span class="n">n_sigma</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">CLs_exp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected CLs(</span><span class="si">{</span><span class="n">n_sigma</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2"> σ): </span><span class="si">{</span><span class="n">expected_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   0%|          | 0/1000 [00:00&lt;?, ?toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   1%|          | 7/1000 [00:00&lt;00:16, 61.20toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   1%|▏         | 14/1000 [00:00&lt;00:16, 60.52toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   2%|▏         | 21/1000 [00:00&lt;00:16, 60.05toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   3%|▎         | 28/1000 [00:00&lt;00:15, 61.86toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   4%|▎         | 35/1000 [00:00&lt;00:15, 61.70toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   4%|▍         | 42/1000 [00:00&lt;00:15, 62.25toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   5%|▍         | 49/1000 [00:00&lt;00:15, 62.09toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   6%|▌         | 56/1000 [00:00&lt;00:15, 61.86toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   6%|▋         | 63/1000 [00:01&lt;00:15, 59.66toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   7%|▋         | 70/1000 [00:01&lt;00:15, 60.17toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   8%|▊         | 77/1000 [00:01&lt;00:15, 60.12toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   8%|▊         | 84/1000 [00:01&lt;00:14, 61.29toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:   9%|▉         | 91/1000 [00:01&lt;00:15, 60.26toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  10%|▉         | 98/1000 [00:01&lt;00:14, 61.81toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  10%|█         | 105/1000 [00:01&lt;00:14, 62.31toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  11%|█         | 112/1000 [00:01&lt;00:14, 60.83toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  12%|█▏        | 119/1000 [00:01&lt;00:14, 59.57toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  12%|█▎        | 125/1000 [00:02&lt;00:15, 58.32toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  13%|█▎        | 132/1000 [00:02&lt;00:14, 58.67toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  14%|█▍        | 139/1000 [00:02&lt;00:14, 59.72toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  14%|█▍        | 145/1000 [00:02&lt;00:14, 59.01toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  15%|█▌        | 151/1000 [00:02&lt;00:14, 59.17toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  16%|█▌        | 158/1000 [00:02&lt;00:13, 60.27toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  16%|█▋        | 165/1000 [00:02&lt;00:13, 60.29toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  17%|█▋        | 172/1000 [00:02&lt;00:14, 58.57toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  18%|█▊        | 178/1000 [00:02&lt;00:14, 57.73toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  18%|█▊        | 184/1000 [00:03&lt;00:14, 57.39toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  19%|█▉        | 190/1000 [00:03&lt;00:14, 57.70toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  20%|█▉        | 196/1000 [00:03&lt;00:13, 57.95toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  20%|██        | 202/1000 [00:03&lt;00:13, 57.01toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  21%|██        | 208/1000 [00:03&lt;00:13, 57.26toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  22%|██▏       | 215/1000 [00:03&lt;00:13, 58.34toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  22%|██▏       | 221/1000 [00:03&lt;00:13, 58.42toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  23%|██▎       | 227/1000 [00:03&lt;00:13, 58.70toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  23%|██▎       | 234/1000 [00:03&lt;00:13, 58.55toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  24%|██▍       | 241/1000 [00:04&lt;00:12, 58.97toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  25%|██▍       | 248/1000 [00:04&lt;00:12, 59.69toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  25%|██▌       | 254/1000 [00:04&lt;00:12, 59.33toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  26%|██▌       | 261/1000 [00:04&lt;00:12, 60.21toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  27%|██▋       | 268/1000 [00:04&lt;00:12, 60.53toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  28%|██▊       | 275/1000 [00:04&lt;00:12, 60.11toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  28%|██▊       | 282/1000 [00:04&lt;00:12, 58.94toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  29%|██▉       | 289/1000 [00:04&lt;00:11, 59.94toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  30%|██▉       | 296/1000 [00:04&lt;00:11, 59.77toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  30%|███       | 302/1000 [00:05&lt;00:11, 58.91toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  31%|███       | 309/1000 [00:05&lt;00:11, 59.79toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  32%|███▏      | 316/1000 [00:05&lt;00:11, 60.47toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  32%|███▏      | 323/1000 [00:05&lt;00:11, 60.61toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  33%|███▎      | 330/1000 [00:05&lt;00:11, 57.63toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  34%|███▎      | 336/1000 [00:05&lt;00:11, 57.18toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  34%|███▍      | 342/1000 [00:05&lt;00:11, 57.19toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  35%|███▍      | 348/1000 [00:05&lt;00:11, 56.89toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  35%|███▌      | 354/1000 [00:05&lt;00:11, 57.52toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  36%|███▌      | 360/1000 [00:06&lt;00:11, 57.21toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  37%|███▋      | 366/1000 [00:06&lt;00:11, 57.61toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  37%|███▋      | 372/1000 [00:06&lt;00:10, 57.99toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  38%|███▊      | 379/1000 [00:06&lt;00:10, 58.66toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  39%|███▊      | 386/1000 [00:06&lt;00:10, 59.93toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  39%|███▉      | 392/1000 [00:06&lt;00:10, 59.35toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  40%|███▉      | 399/1000 [00:06&lt;00:09, 60.20toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  41%|████      | 406/1000 [00:06&lt;00:09, 59.55toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  41%|████▏     | 413/1000 [00:06&lt;00:09, 59.71toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  42%|████▏     | 420/1000 [00:07&lt;00:09, 60.77toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  43%|████▎     | 427/1000 [00:07&lt;00:09, 60.08toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  43%|████▎     | 434/1000 [00:07&lt;00:09, 59.93toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  44%|████▍     | 440/1000 [00:07&lt;00:09, 59.19toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  45%|████▍     | 447/1000 [00:07&lt;00:09, 60.36toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  45%|████▌     | 454/1000 [00:07&lt;00:09, 59.41toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  46%|████▌     | 461/1000 [00:07&lt;00:08, 60.78toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  47%|████▋     | 468/1000 [00:07&lt;00:08, 60.77toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  48%|████▊     | 475/1000 [00:07&lt;00:08, 60.34toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  48%|████▊     | 482/1000 [00:08&lt;00:08, 60.67toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  49%|████▉     | 489/1000 [00:08&lt;00:08, 60.54toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  50%|████▉     | 496/1000 [00:08&lt;00:08, 60.47toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  50%|█████     | 503/1000 [00:08&lt;00:08, 61.39toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  51%|█████     | 510/1000 [00:08&lt;00:08, 61.23toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  52%|█████▏    | 517/1000 [00:08&lt;00:07, 60.40toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  52%|█████▏    | 524/1000 [00:08&lt;00:07, 61.66toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  53%|█████▎    | 531/1000 [00:08&lt;00:07, 60.86toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  54%|█████▍    | 538/1000 [00:09&lt;00:07, 61.90toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  55%|█████▍    | 545/1000 [00:09&lt;00:07, 60.72toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  55%|█████▌    | 552/1000 [00:09&lt;00:07, 59.38toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  56%|█████▌    | 558/1000 [00:09&lt;00:07, 58.11toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  56%|█████▋    | 565/1000 [00:09&lt;00:07, 59.33toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  57%|█████▋    | 572/1000 [00:09&lt;00:07, 60.71toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  58%|█████▊    | 579/1000 [00:09&lt;00:06, 61.35toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  59%|█████▊    | 586/1000 [00:09&lt;00:06, 61.12toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  59%|█████▉    | 593/1000 [00:09&lt;00:06, 61.17toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  60%|██████    | 600/1000 [00:10&lt;00:06, 59.45toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  61%|██████    | 606/1000 [00:10&lt;00:06, 59.52toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  61%|██████▏   | 613/1000 [00:10&lt;00:06, 59.71toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  62%|██████▏   | 620/1000 [00:10&lt;00:06, 60.79toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  63%|██████▎   | 627/1000 [00:10&lt;00:06, 61.01toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  63%|██████▎   | 634/1000 [00:10&lt;00:06, 60.70toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  64%|██████▍   | 641/1000 [00:10&lt;00:05, 60.64toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  65%|██████▍   | 648/1000 [00:10&lt;00:05, 60.88toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  66%|██████▌   | 655/1000 [00:10&lt;00:05, 60.20toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  66%|██████▌   | 662/1000 [00:11&lt;00:05, 59.64toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  67%|██████▋   | 669/1000 [00:11&lt;00:05, 60.13toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  68%|██████▊   | 676/1000 [00:11&lt;00:05, 60.95toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  68%|██████▊   | 683/1000 [00:11&lt;00:05, 60.83toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  69%|██████▉   | 690/1000 [00:11&lt;00:05, 61.39toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  70%|██████▉   | 697/1000 [00:11&lt;00:04, 61.99toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  70%|███████   | 704/1000 [00:11&lt;00:04, 61.38toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  71%|███████   | 711/1000 [00:11&lt;00:04, 60.87toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  72%|███████▏  | 718/1000 [00:11&lt;00:04, 60.63toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  72%|███████▎  | 725/1000 [00:12&lt;00:04, 59.41toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  73%|███████▎  | 732/1000 [00:12&lt;00:04, 60.06toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  74%|███████▍  | 739/1000 [00:12&lt;00:04, 59.16toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  75%|███████▍  | 746/1000 [00:12&lt;00:04, 59.91toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  75%|███████▌  | 753/1000 [00:12&lt;00:04, 59.80toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  76%|███████▌  | 760/1000 [00:12&lt;00:03, 61.03toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  77%|███████▋  | 767/1000 [00:12&lt;00:03, 60.55toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  77%|███████▋  | 774/1000 [00:12&lt;00:03, 59.60toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  78%|███████▊  | 780/1000 [00:13&lt;00:03, 58.78toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  79%|███████▊  | 786/1000 [00:13&lt;00:03, 57.98toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  79%|███████▉  | 792/1000 [00:13&lt;00:03, 58.18toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  80%|███████▉  | 798/1000 [00:13&lt;00:03, 55.71toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  80%|████████  | 804/1000 [00:13&lt;00:03, 56.59toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  81%|████████  | 811/1000 [00:13&lt;00:03, 58.74toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  82%|████████▏ | 818/1000 [00:13&lt;00:03, 59.77toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  82%|████████▎ | 825/1000 [00:13&lt;00:02, 60.44toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  83%|████████▎ | 832/1000 [00:13&lt;00:02, 58.70toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  84%|████████▍ | 839/1000 [00:14&lt;00:02, 59.58toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  84%|████████▍ | 845/1000 [00:14&lt;00:02, 57.72toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  85%|████████▌ | 851/1000 [00:14&lt;00:02, 56.53toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  86%|████████▌ | 857/1000 [00:14&lt;00:02, 57.29toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  86%|████████▋ | 864/1000 [00:14&lt;00:02, 58.24toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  87%|████████▋ | 871/1000 [00:14&lt;00:02, 59.59toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  88%|████████▊ | 878/1000 [00:14&lt;00:01, 61.26toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  88%|████████▊ | 885/1000 [00:14&lt;00:01, 61.02toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  89%|████████▉ | 892/1000 [00:14&lt;00:01, 61.34toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  90%|████████▉ | 899/1000 [00:15&lt;00:01, 62.07toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  91%|█████████ | 906/1000 [00:15&lt;00:01, 60.31toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  91%|█████████▏| 913/1000 [00:15&lt;00:01, 59.59toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  92%|█████████▏| 920/1000 [00:15&lt;00:01, 59.99toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  93%|█████████▎| 927/1000 [00:15&lt;00:01, 61.51toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  93%|█████████▎| 934/1000 [00:15&lt;00:01, 62.15toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  94%|█████████▍| 941/1000 [00:15&lt;00:00, 61.28toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  95%|█████████▍| 948/1000 [00:15&lt;00:00, 61.17toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  96%|█████████▌| 955/1000 [00:15&lt;00:00, 61.60toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  96%|█████████▌| 962/1000 [00:16&lt;00:00, 59.84toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  97%|█████████▋| 969/1000 [00:16&lt;00:00, 60.00toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  98%|█████████▊| 976/1000 [00:16&lt;00:00, 60.91toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  98%|█████████▊| 983/1000 [00:16&lt;00:00, 60.84toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like:  99%|█████████▉| 990/1000 [00:16&lt;00:00, 61.84toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal-like: 100%|█████████▉| 997/1000 [00:16&lt;00:00, 61.09toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   0%|          | 0/1000 [00:00&lt;?, ?toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   1%|          | 6/1000 [00:00&lt;00:16, 59.50toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   1%|          | 12/1000 [00:00&lt;00:17, 56.75toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   2%|▏         | 18/1000 [00:00&lt;00:17, 57.42toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   2%|▏         | 24/1000 [00:00&lt;00:16, 58.26toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   3%|▎         | 31/1000 [00:00&lt;00:16, 58.93toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   4%|▍         | 38/1000 [00:00&lt;00:16, 59.47toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   4%|▍         | 45/1000 [00:00&lt;00:15, 60.58toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   5%|▌         | 52/1000 [00:00&lt;00:15, 60.63toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   6%|▌         | 59/1000 [00:00&lt;00:15, 60.69toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   7%|▋         | 66/1000 [00:01&lt;00:15, 60.73toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   7%|▋         | 73/1000 [00:01&lt;00:15, 61.58toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   8%|▊         | 80/1000 [00:01&lt;00:15, 61.18toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   9%|▊         | 87/1000 [00:01&lt;00:14, 61.23toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:   9%|▉         | 94/1000 [00:01&lt;00:14, 61.43toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  10%|█         | 101/1000 [00:01&lt;00:14, 61.06toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  11%|█         | 108/1000 [00:01&lt;00:14, 59.51toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  12%|█▏        | 115/1000 [00:01&lt;00:14, 60.95toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  12%|█▏        | 122/1000 [00:02&lt;00:14, 59.71toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  13%|█▎        | 128/1000 [00:02&lt;00:14, 59.10toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  14%|█▎        | 135/1000 [00:02&lt;00:14, 60.70toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  14%|█▍        | 142/1000 [00:02&lt;00:14, 60.13toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  15%|█▍        | 149/1000 [00:02&lt;00:14, 60.05toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  16%|█▌        | 156/1000 [00:02&lt;00:14, 59.25toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  16%|█▌        | 162/1000 [00:02&lt;00:14, 58.81toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  17%|█▋        | 168/1000 [00:02&lt;00:14, 57.81toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  17%|█▋        | 174/1000 [00:02&lt;00:14, 57.46toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  18%|█▊        | 181/1000 [00:03&lt;00:13, 58.63toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  19%|█▉        | 188/1000 [00:03&lt;00:13, 58.33toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  19%|█▉        | 194/1000 [00:03&lt;00:14, 57.15toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  20%|██        | 200/1000 [00:03&lt;00:13, 57.23toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  21%|██        | 206/1000 [00:03&lt;00:13, 57.28toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  21%|██        | 212/1000 [00:03&lt;00:13, 56.39toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  22%|██▏       | 218/1000 [00:03&lt;00:13, 56.85toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  22%|██▏       | 224/1000 [00:03&lt;00:13, 57.06toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  23%|██▎       | 230/1000 [00:03&lt;00:13, 56.09toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  24%|██▎       | 236/1000 [00:04&lt;00:13, 56.10toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  24%|██▍       | 242/1000 [00:04&lt;00:13, 55.03toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  25%|██▍       | 248/1000 [00:04&lt;00:13, 55.95toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  25%|██▌       | 254/1000 [00:04&lt;00:13, 56.29toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  26%|██▌       | 260/1000 [00:04&lt;00:13, 55.75toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  27%|██▋       | 266/1000 [00:04&lt;00:13, 54.77toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  27%|██▋       | 272/1000 [00:04&lt;00:13, 54.23toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  28%|██▊       | 278/1000 [00:04&lt;00:13, 54.98toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  28%|██▊       | 284/1000 [00:04&lt;00:12, 56.34toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  29%|██▉       | 290/1000 [00:04&lt;00:12, 56.38toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  30%|██▉       | 297/1000 [00:05&lt;00:12, 57.81toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  30%|███       | 303/1000 [00:05&lt;00:12, 57.78toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  31%|███       | 310/1000 [00:05&lt;00:11, 59.30toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  32%|███▏      | 316/1000 [00:05&lt;00:11, 58.60toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  32%|███▏      | 323/1000 [00:05&lt;00:11, 59.50toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  33%|███▎      | 329/1000 [00:05&lt;00:11, 58.29toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  34%|███▎      | 335/1000 [00:05&lt;00:11, 58.11toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  34%|███▍      | 341/1000 [00:05&lt;00:11, 56.24toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  35%|███▍      | 347/1000 [00:05&lt;00:11, 56.04toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  35%|███▌      | 353/1000 [00:06&lt;00:11, 56.14toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  36%|███▌      | 359/1000 [00:06&lt;00:11, 55.75toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  37%|███▋      | 366/1000 [00:06&lt;00:10, 57.73toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  37%|███▋      | 373/1000 [00:06&lt;00:10, 58.79toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  38%|███▊      | 379/1000 [00:06&lt;00:10, 58.56toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  39%|███▊      | 386/1000 [00:06&lt;00:10, 59.86toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  39%|███▉      | 392/1000 [00:06&lt;00:10, 58.14toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  40%|███▉      | 398/1000 [00:06&lt;00:10, 58.12toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  40%|████      | 405/1000 [00:06&lt;00:10, 58.98toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  41%|████      | 411/1000 [00:07&lt;00:10, 57.72toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  42%|████▏     | 417/1000 [00:07&lt;00:10, 57.67toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  42%|████▏     | 423/1000 [00:07&lt;00:10, 57.58toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  43%|████▎     | 429/1000 [00:07&lt;00:10, 56.89toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  44%|████▎     | 435/1000 [00:07&lt;00:10, 56.47toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  44%|████▍     | 441/1000 [00:07&lt;00:09, 56.69toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  45%|████▍     | 447/1000 [00:07&lt;00:09, 56.28toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  45%|████▌     | 453/1000 [00:07&lt;00:09, 56.00toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  46%|████▌     | 459/1000 [00:07&lt;00:09, 56.99toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  46%|████▋     | 465/1000 [00:08&lt;00:09, 56.90toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  47%|████▋     | 471/1000 [00:08&lt;00:09, 57.60toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  48%|████▊     | 478/1000 [00:08&lt;00:08, 58.65toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  48%|████▊     | 484/1000 [00:08&lt;00:08, 57.75toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  49%|████▉     | 490/1000 [00:08&lt;00:09, 55.39toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  50%|████▉     | 496/1000 [00:08&lt;00:09, 55.70toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  50%|█████     | 502/1000 [00:08&lt;00:08, 55.44toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  51%|█████     | 508/1000 [00:08&lt;00:08, 54.86toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  51%|█████▏    | 514/1000 [00:08&lt;00:08, 54.81toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  52%|█████▏    | 520/1000 [00:09&lt;00:08, 55.32toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  53%|█████▎    | 526/1000 [00:09&lt;00:08, 55.17toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  53%|█████▎    | 533/1000 [00:09&lt;00:08, 56.70toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  54%|█████▍    | 539/1000 [00:09&lt;00:08, 55.66toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  55%|█████▍    | 545/1000 [00:09&lt;00:08, 54.11toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  55%|█████▌    | 551/1000 [00:09&lt;00:08, 53.18toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  56%|█████▌    | 557/1000 [00:09&lt;00:08, 53.36toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  56%|█████▋    | 563/1000 [00:09&lt;00:08, 54.21toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  57%|█████▋    | 569/1000 [00:09&lt;00:07, 54.17toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  57%|█████▊    | 575/1000 [00:10&lt;00:07, 54.15toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  58%|█████▊    | 581/1000 [00:10&lt;00:07, 54.86toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  59%|█████▊    | 587/1000 [00:10&lt;00:07, 55.22toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  59%|█████▉    | 594/1000 [00:10&lt;00:07, 57.08toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  60%|██████    | 600/1000 [00:10&lt;00:07, 55.56toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  61%|██████    | 606/1000 [00:10&lt;00:07, 55.80toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  61%|██████    | 612/1000 [00:10&lt;00:06, 55.57toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  62%|██████▏   | 619/1000 [00:10&lt;00:06, 56.84toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  63%|██████▎   | 626/1000 [00:10&lt;00:06, 58.22toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  63%|██████▎   | 632/1000 [00:11&lt;00:06, 57.90toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  64%|██████▍   | 638/1000 [00:11&lt;00:06, 56.87toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  64%|██████▍   | 644/1000 [00:11&lt;00:06, 56.24toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  65%|██████▌   | 650/1000 [00:11&lt;00:06, 56.97toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  66%|██████▌   | 656/1000 [00:11&lt;00:06, 56.86toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  66%|██████▌   | 662/1000 [00:11&lt;00:05, 56.44toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  67%|██████▋   | 669/1000 [00:11&lt;00:05, 58.41toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  68%|██████▊   | 675/1000 [00:11&lt;00:05, 58.24toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  68%|██████▊   | 681/1000 [00:11&lt;00:05, 58.28toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  69%|██████▊   | 687/1000 [00:11&lt;00:05, 57.01toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  69%|██████▉   | 694/1000 [00:12&lt;00:05, 57.90toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  70%|███████   | 700/1000 [00:12&lt;00:05, 57.34toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  71%|███████   | 707/1000 [00:12&lt;00:04, 58.69toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  71%|███████▏  | 714/1000 [00:12&lt;00:04, 59.88toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  72%|███████▏  | 720/1000 [00:12&lt;00:04, 59.29toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  73%|███████▎  | 726/1000 [00:12&lt;00:04, 58.52toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  73%|███████▎  | 732/1000 [00:12&lt;00:04, 57.83toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  74%|███████▍  | 738/1000 [00:12&lt;00:04, 57.38toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  74%|███████▍  | 744/1000 [00:12&lt;00:04, 56.91toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  75%|███████▌  | 750/1000 [00:13&lt;00:04, 57.42toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  76%|███████▌  | 757/1000 [00:13&lt;00:04, 58.31toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  76%|███████▋  | 763/1000 [00:13&lt;00:04, 58.50toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  77%|███████▋  | 769/1000 [00:13&lt;00:04, 55.57toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  78%|███████▊  | 775/1000 [00:13&lt;00:04, 54.63toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  78%|███████▊  | 781/1000 [00:13&lt;00:03, 55.76toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  79%|███████▉  | 788/1000 [00:13&lt;00:03, 57.42toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  79%|███████▉  | 794/1000 [00:13&lt;00:03, 57.43toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  80%|████████  | 800/1000 [00:13&lt;00:03, 57.09toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  81%|████████  | 807/1000 [00:14&lt;00:03, 59.96toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  81%|████████▏ | 814/1000 [00:14&lt;00:03, 60.99toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  82%|████████▏ | 821/1000 [00:14&lt;00:02, 61.12toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  83%|████████▎ | 828/1000 [00:14&lt;00:02, 60.45toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  84%|████████▎ | 835/1000 [00:14&lt;00:02, 61.74toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  84%|████████▍ | 842/1000 [00:14&lt;00:02, 59.66toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  85%|████████▍ | 849/1000 [00:14&lt;00:02, 59.86toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  86%|████████▌ | 856/1000 [00:14&lt;00:02, 58.36toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  86%|████████▌ | 862/1000 [00:14&lt;00:02, 57.56toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  87%|████████▋ | 868/1000 [00:15&lt;00:02, 57.96toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  88%|████████▊ | 875/1000 [00:15&lt;00:02, 59.58toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  88%|████████▊ | 881/1000 [00:15&lt;00:02, 59.36toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  89%|████████▊ | 887/1000 [00:15&lt;00:01, 58.33toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  89%|████████▉ | 893/1000 [00:15&lt;00:01, 57.29toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  90%|████████▉ | 899/1000 [00:15&lt;00:01, 57.13toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  90%|█████████ | 905/1000 [00:15&lt;00:01, 53.45toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  91%|█████████ | 912/1000 [00:15&lt;00:01, 56.35toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  92%|█████████▏| 918/1000 [00:15&lt;00:01, 57.31toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  92%|█████████▏| 924/1000 [00:16&lt;00:01, 55.63toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  93%|█████████▎| 930/1000 [00:16&lt;00:01, 55.54toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  94%|█████████▎| 937/1000 [00:16&lt;00:01, 57.33toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  94%|█████████▍| 943/1000 [00:16&lt;00:00, 57.68toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  95%|█████████▍| 949/1000 [00:16&lt;00:00, 57.07toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  96%|█████████▌| 955/1000 [00:16&lt;00:00, 57.56toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  96%|█████████▌| 962/1000 [00:16&lt;00:00, 58.30toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  97%|█████████▋| 968/1000 [00:16&lt;00:00, 58.41toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  97%|█████████▋| 974/1000 [00:16&lt;00:00, 57.60toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  98%|█████████▊| 980/1000 [00:17&lt;00:00, 56.12toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  99%|█████████▊| 986/1000 [00:17&lt;00:00, 57.09toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like:  99%|█████████▉| 992/1000 [00:17&lt;00:00, 57.71toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background-like: 100%|█████████▉| 998/1000 [00:17&lt;00:00, 55.76toy/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Observed CLs: 0.4878
+Expected CLs(-2 σ): 0.0273
+Expected CLs(-1 σ): 0.1432
+Expected CLs( 0 σ): 0.3778
+Expected CLs( 1 σ): 1.0000
+Expected CLs( 2 σ): 1.0000
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll notice that this time, a progress bar pops up! This is running the fits for each of these toys. We’re hard at work to find new ways to improve the performance of this, but evaluating 50+ toys/s is not very bad for the initial implementation.</p>
+<p>Overall, this is not so bad given that we’re only running 1000 toys. What does this look like in a case where we have lower statistics?</p>
+</div>
+<div class="section" id="hypothesis-testing-low-stats">
+<h2>Hypothesis Testing (low stats)<a class="headerlink" href="#hypothesis-testing-low-stats" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_low</span> <span class="o">=</span> <span class="n">pyhf</span><span class="o">.</span><span class="n">simplemodels</span><span class="o">.</span><span class="n">hepdata_like</span><span class="p">(</span>
+    <span class="n">signal_data</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">bkg_data</span><span class="o">=</span><span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">],</span> <span class="n">bkg_uncerts</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the asymptotics case:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CLs_obs</span><span class="p">,</span> <span class="n">CLs_exp</span> <span class="o">=</span> <span class="n">pyhf</span><span class="o">.</span><span class="n">infer</span><span class="o">.</span><span class="n">hypotest</span><span class="p">(</span>
+    <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># null hypothesis</span>
+    <span class="p">[</span><span class="mf">5.25</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">]</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">auxdata</span><span class="p">,</span>
+    <span class="n">model</span><span class="p">,</span>
+    <span class="n">test_stat</span><span class="o">=</span><span class="s2">&quot;qtilde&quot;</span><span class="p">,</span>
+    <span class="n">return_expected_set</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">calctype</span><span class="o">=</span><span class="s2">&quot;asymptotics&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      Observed CLs: </span><span class="si">{</span><span class="n">CLs_obs</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">expected_value</span><span class="p">,</span> <span class="n">n_sigma</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">CLs_exp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected CLs(</span><span class="si">{</span><span class="n">n_sigma</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2"> σ): </span><span class="si">{</span><span class="n">expected_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now throwing 2000 toys:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CLs_obs</span><span class="p">,</span> <span class="n">CLs_exp</span> <span class="o">=</span> <span class="n">pyhf</span><span class="o">.</span><span class="n">infer</span><span class="o">.</span><span class="n">hypotest</span><span class="p">(</span>
+    <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># null hypothesis</span>
+    <span class="p">[</span><span class="mf">5.25</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">]</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">auxdata</span><span class="p">,</span>
+    <span class="n">model</span><span class="p">,</span>
+    <span class="n">test_stat</span><span class="o">=</span><span class="s2">&quot;qtilde&quot;</span><span class="p">,</span>
+    <span class="n">return_expected_set</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">calctype</span><span class="o">=</span><span class="s2">&quot;toybased&quot;</span><span class="p">,</span>
+    <span class="n">ntoys</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      Observed CLs: </span><span class="si">{</span><span class="n">CLs_obs</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">expected_value</span><span class="p">,</span> <span class="n">n_sigma</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">CLs_exp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected CLs(</span><span class="si">{</span><span class="n">n_sigma</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2"> σ): </span><span class="si">{</span><span class="n">expected_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And as you can see in the case of lower statistics, the asymptotic approximation starts failing!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="PullPlot.html" title="previous page">Making a Pull Plot</a>
+    <a class='right-next' id="next-link" href="Combinations.html" title="next page">Performing a Combination</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By the pyhf development team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

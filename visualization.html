@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualization &#8212; LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Get started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="HelloWorld.html">
+   My First Likelihood
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SimpleWorkspace.html">
+   Workspace World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SerializationAndPatching.html">
+   Using HEPData
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Common use and applications
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="PullPlot.html">
+   Making a Pull Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Toys.html">
+   Playing with Toys
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Combinations.html">
+   Performing a Combination
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  More Information
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="IntroToHiFa.html">
+   HistFactory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WorkspaceManipulations.html">
+   Workspace Manipulations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Modifiers.html">
+   Modifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UsingCalculators.html">
+   Using Calculators
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Learn Fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="InterpolationCodes.html">
+   Piecewise Linear Interpolation
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/issues/new?title=Issue%20on%20page%20%2Fvisualization.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/edit/main/book/visualization.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyhf/tutorial-Reinterpretation-Forum-2021/main?urlpath=lab/tree/book/visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/pyhf/tutorial-Reinterpretation-Forum-2021/blob/main/book/visualization.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization-with-altair">
+   Visualization with Altair
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-data">
+   Preparing the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-the-chart">
+   Defining the Chart
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="visualization-with-altair">
+<h2>Visualization with Altair<a class="headerlink" href="#visualization-with-altair" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://altair-viz.github.io/">Altair</a> is a python API for generating <a class="reference external" href="https://vega.github.io/">Vega</a> visuazliation specifications. We demonstracte how to use this to build an interactive chart of pyhf results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyhf</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preparing-the-data">
+<h2>Preparing the data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Altair reads the data as a pandas dataframe, so we create one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/2-bin_1-channel.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">serialized</span><span class="p">:</span>
+    <span class="n">spec</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">serialized</span><span class="p">)</span>
+
+<span class="n">workspace</span> <span class="o">=</span> <span class="n">pyhf</span><span class="o">.</span><span class="n">Workspace</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">poi_name</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">)</span>
+<span class="n">pars</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">suggested_init</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muscan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">pyhf</span><span class="o">.</span><span class="n">infer</span><span class="o">.</span><span class="n">hypotest</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">test_stat</span><span class="o">=</span><span class="s2">&quot;qtilde&quot;</span><span class="p">,</span> <span class="n">return_expected_set</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">muscan</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.7/x64/lib/python3.8/site-packages/pyhf/infer/calculators.py:352: RuntimeWarning: invalid value encountered in double_scalars
+  teststat = (qmu - qmu_A) / (2 * self.sqrtqmuA_v)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">muscan</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="s2">&quot;obs&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;exp_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mu</th>
+      <th>obs</th>
+      <th>exp_0</th>
+      <th>exp_1</th>
+      <th>exp_2</th>
+      <th>exp_3</th>
+      <th>exp_4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.166667</td>
+      <td>0.894467</td>
+      <td>0.696279</td>
+      <td>0.790386</td>
+      <td>0.882016</td>
+      <td>0.954161</td>
+      <td>0.990491</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.333333</td>
+      <td>0.810569</td>
+      <td>0.474859</td>
+      <td>0.613139</td>
+      <td>0.766298</td>
+      <td>0.902012</td>
+      <td>0.977944</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.500000</td>
+      <td>0.743660</td>
+      <td>0.317111</td>
+      <td>0.466615</td>
+      <td>0.655300</td>
+      <td>0.843970</td>
+      <td>0.961738</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.666667</td>
+      <td>0.655289</td>
+      <td>0.207300</td>
+      <td>0.348220</td>
+      <td>0.551190</td>
+      <td>0.780776</td>
+      <td>0.941258</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="defining-the-chart">
+<h2>Defining the Chart<a class="headerlink" href="#defining-the-chart" title="Permalink to this headline">¶</a></h2>
+<p>We need to filled areas for the 1,2 sigma bands and two lines for the expected and observed CLs value. For interactivity we add a hovering label of the observed result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_area</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;exp_1&quot;</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="s2">&quot;exp_3&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">band2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_area</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;exp_0&quot;</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="s2">&quot;exp_4&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">line1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;obs&quot;</span><span class="p">)</span>
+
+<span class="n">line2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;exp_2&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">nearest</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
+    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mu&quot;</span><span class="p">],</span> <span class="n">empty</span><span class="o">=</span><span class="s2">&quot;none&quot;</span>
+<span class="p">)</span>
+
+
+<span class="n">point</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">nearest</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
+    <span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">nearest</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">line1</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">nearest</span><span class="p">,</span> <span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span>
+<span class="p">)</span>
+
+
+<span class="n">band2</span> <span class="o">+</span> <span class="n">band1</span> <span class="o">+</span> <span class="n">line1</span> <span class="o">+</span> <span class="n">line2</span> <span class="o">+</span> <span class="n">point</span> <span class="o">+</span> <span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-7d573378667d48b9bccf88065254ce88"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-7d573378667d48b9bccf88065254ce88") {
+      outputDiv = document.getElementById("altair-viz-7d573378667d48b9bccf88065254ce88");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "area", "color": "yellow", "opacity": 0.5}, "encoding": {"x": {"type": "quantitative", "field": "mu"}, "y": {"type": "quantitative", "field": "exp_0"}, "y2": {"field": "exp_4"}}}, {"mark": {"type": "area", "color": "green", "opacity": 0.5}, "encoding": {"x": {"type": "quantitative", "field": "mu"}, "y": {"type": "quantitative", "field": "exp_1"}, "y2": {"field": "exp_3"}}}, {"mark": {"type": "line", "color": "black"}, "encoding": {"x": {"type": "quantitative", "field": "mu"}, "y": {"type": "quantitative", "field": "obs"}}}, {"mark": {"type": "line", "color": "black", "strokeDash": [5, 5]}, "encoding": {"x": {"type": "quantitative", "field": "mu"}, "y": {"type": "quantitative", "field": "exp_2"}}}, {"mark": {"type": "point", "color": "black"}, "encoding": {"opacity": {"condition": {"value": 1, "selection": "selector001"}, "value": 0}, "x": {"type": "quantitative", "field": "mu"}, "y": {"type": "quantitative", "field": "obs"}}, "selection": {"selector001": {"type": "single", "nearest": true, "on": "mouseover", "fields": ["mu"], "empty": "none"}}}, {"mark": {"type": "text", "align": "left", "dx": 5, "dy": -5}, "encoding": {"text": {"condition": {"type": "quantitative", "field": "obs", "selection": "selector001"}, "value": " "}, "x": {"type": "quantitative", "field": "mu"}, "y": {"type": "quantitative", "field": "obs"}}}], "data": {"name": "data-45a2a6f1d2dc517a46a8a4df470779f0"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-45a2a6f1d2dc517a46a8a4df470779f0": [{"mu": 0.0, "obs": null, "exp_0": 1.0, "exp_1": 1.0, "exp_2": 1.0, "exp_3": 1.0, "exp_4": 1.0}, {"mu": 0.16666666666666666, "obs": 0.8944672997490264, "exp_0": 0.6962792790053375, "exp_1": 0.7903858816112351, "exp_2": 0.8820161449383511, "exp_3": 0.954160681592762, "exp_4": 0.9904911657081796}, {"mu": 0.3333333333333333, "obs": 0.8105686698471092, "exp_0": 0.47485875888316975, "exp_1": 0.6131387141791159, "exp_2": 0.7662982333272002, "exp_3": 0.9020124524437954, "exp_4": 0.9779436850896024}, {"mu": 0.5, "obs": 0.7436603382250626, "exp_0": 0.3171107821128788, "exp_1": 0.4666149831145208, "exp_2": 0.6553000763940724, "exp_3": 0.8439700580650931, "exp_4": 0.9617383810889852}, {"mu": 0.6666666666666666, "obs": 0.655289380788671, "exp_0": 0.20730047079630176, "exp_1": 0.3482198985663551, "exp_2": 0.5511903056730106, "exp_3": 0.7807761830517884, "exp_4": 0.9412576720900742}, {"mu": 0.8333333333333333, "obs": 0.5686642612032694, "exp_0": 0.13262326300973912, "exp_1": 0.2547258141991442, "exp_2": 0.4557238193374423, "exp_3": 0.7134867006526255, "exp_4": 0.9159335745463236}, {"mu": 1.0, "obs": 0.4856399484713726, "exp_0": 0.08301671550449127, "exp_1": 0.1825827716899532, "exp_2": 0.3701533437480503, "exp_3": 0.6434240650923724, "exp_4": 0.8853038279362345}, {"mu": 1.1666666666666665, "obs": 0.4078512233954886, "exp_0": 0.05083262985891241, "exp_1": 0.12819463129474107, "exp_2": 0.29519078723485837, "exp_3": 0.5721024771603764, "exp_4": 0.8490715436873957}, {"mu": 1.3333333333333333, "obs": 0.3366156860735286, "exp_0": 0.03044146595287521, "exp_1": 0.0881398314613298, "exp_2": 0.2310185542544314, "exp_3": 0.5011317319593964, "exp_4": 0.8071619782743665}, {"mu": 1.5, "obs": 0.272866741743829, "exp_0": 0.017826189815794827, "exp_1": 0.05932647880179957, "exp_2": 0.17734337227427022, "exp_3": 0.43210841099395536, "exp_4": 0.7597680163983499}, {"mu": 1.6666666666666665, "obs": 0.21712556109877107, "exp_0": 0.010205989200608606, "exp_1": 0.039083456763105935, "exp_2": 0.1334832938765629, "exp_3": 0.36650766514705563, "exp_4": 0.7073770982043076}, {"mu": 1.8333333333333333, "obs": 0.16951059522430442, "exp_0": 0.005712139681449681, "exp_1": 0.025194851170543403, "exp_2": 0.09847378408825835, "exp_3": 0.30558748287968435, "exp_4": 0.6507731166781737}, {"mu": 2.0, "obs": 0.12978078023608902, "exp_0": 0.003124949705695385, "exp_1": 0.015889985115627236, "exp_2": 0.07117891151823148, "exp_3": 0.2503158899861028, "exp_4": 0.591009619728009}, {"mu": 2.1666666666666665, "obs": 0.09740325365604166, "exp_0": 0.0016709032190888192, "exp_1": 0.009802989820556895, "exp_2": 0.05039542707717298, "exp_3": 0.20132835221812687, "exp_4": 0.5293546384477877}, {"mu": 2.333333333333333, "obs": 0.07163530610808863, "exp_0": 0.0008731671421341343, "exp_1": 0.005915063143978858, "exp_2": 0.03494043127096936, "exp_3": 0.1589178752294128, "exp_4": 0.4672112941380452}, {"mu": 2.5, "obs": 0.05160964599060569, "exp_0": 0.0004459286648643571, "exp_1": 0.003490440120853869, "exp_2": 0.023717377675839434, "exp_3": 0.1230560366627996, "exp_4": 0.40602236750660764}, {"mu": 2.6666666666666665, "obs": 0.036413459422256364, "exp_0": 0.00022256136681021526, "exp_1": 0.00201412704332733, "exp_2": 0.015758883354172765, "exp_3": 0.09343917846215247, "exp_4": 0.3471695759749792}, {"mu": 2.833333333333333, "obs": 0.025154442489008232, "exp_0": 0.00010855637895332912, "exp_1": 0.0011364668998614525, "exp_2": 0.010247980571833732, "exp_3": 0.06955142324307159, "exp_4": 0.2918792909641599}, {"mu": 3.0, "obs": 0.017009832391511034, "exp_0": 5.1748430877266504e-05, "exp_1": 0.0006270161726889532, "exp_2": 0.006521584159375335, "exp_3": 0.050735203739038746, "exp_4": 0.24114552224421132}, {"mu": 3.1666666666666665, "obs": 0.01125757238069141, "exp_0": 2.411018473028874e-05, "exp_1": 0.0003382615309218714, "exp_2": 0.004060985229434128, "exp_3": 0.0362605223225717, "exp_4": 0.1956782594240106}, {"mu": 3.333333333333333, "obs": 0.007291064235495932, "exp_0": 1.0979956513037095e-05, "exp_1": 0.0001784387470534358, "exp_2": 0.00247427474065383, "exp_3": 0.025385941310054543, "exp_4": 0.15588140039464177}, {"mu": 3.5, "obs": 0.004620567858268129, "exp_0": 4.8881253792344415e-06, "exp_1": 9.204701970734414e-05, "exp_2": 0.0014749931020905296, "exp_3": 0.017406754306524014, "exp_4": 0.12186015220967265}, {"mu": 3.6666666666666665, "obs": 0.0028650284503821117, "exp_0": 2.1275510990967205e-06, "exp_1": 4.643504357502631e-05, "exp_2": 0.0008603142193561181, "exp_3": 0.011688394666357151, "exp_4": 0.09345385864797796}, {"mu": 3.833333333333333, "obs": 0.0017381053127386793, "exp_0": 9.054760543735271e-07, "exp_1": 2.2910730191181997e-05, "exp_2": 0.0004909760943379844, "exp_3": 0.007685413847109028, "exp_4": 0.07028730078400341}, {"mu": 4.0, "obs": 0.00103165402143813, "exp_0": 3.7688184874337454e-07, "exp_1": 1.1057061592832754e-05, "exp_2": 0.0002741712082951104, "exp_3": 0.004948030678562209, "exp_4": 0.051832086855859015}, {"mu": 4.166666666666666, "obs": 0.0005991180786194685, "exp_0": 1.5344222315494524e-07, "exp_1": 5.220450062244315e-06, "exp_2": 0.0001498215096772281, "exp_3": 0.0031191868071476663, "exp_4": 0.03746980452056976}, {"mu": 4.333333333333333, "obs": 0.0003404334683237889, "exp_0": 6.112005476169846e-08, "exp_1": 2.4116356310859363e-06, "exp_2": 8.012346891666193e-05, "exp_3": 0.0019252993351249474, "exp_4": 0.02654990180378083}, {"mu": 4.5, "obs": 0.00018928909411354444, "exp_0": 2.3824110149506838e-08, "exp_1": 1.0902521719875445e-06, "exp_2": 4.194017581709255e-05, "exp_3": 0.001163640966686994, "exp_4": 0.018437361390309628}, {"mu": 4.666666666666666, "obs": 0.00010299941244972312, "exp_0": 9.089609428689312e-09, "exp_1": 4.824330739273773e-07, "exp_2": 2.1490473369456954e-05, "exp_3": 0.0006887010638666475, "exp_4": 0.012547608472186549}, {"mu": 4.833333333333333, "obs": 5.485442468645741e-05, "exp_0": 3.3952894998768047e-09, "exp_1": 2.089931771316597e-07, "exp_2": 1.078140222504875e-05, "exp_3": 0.00039918203142004304, "exp_4": 0.008368286853727184}, {"mu": 5.0, "obs": 2.8596772325704294e-05, "exp_0": 1.2420078027935044e-09, "exp_1": 8.865603464173016e-08, "exp_2": 5.29655764025642e-06, "exp_3": 0.00022661396703848227, "exp_4": 0.005469233642652872}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By the pyhf development team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

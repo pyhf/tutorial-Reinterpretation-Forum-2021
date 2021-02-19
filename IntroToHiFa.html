@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HistFactory &#8212; LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Workspace Manipulations" href="WorkspaceManipulations.html" />
+    <link rel="prev" title="Performing a Combination" href="Combinations.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   LHC Reinterpretation Forum Workshop 2021 pyhf Tutorial
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Get started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="HelloWorld.html">
+   My First Likelihood
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SimpleWorkspace.html">
+   Workspace World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SerializationAndPatching.html">
+   Using HEPData
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Common use and applications
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="PullPlot.html">
+   Making a Pull Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Toys.html">
+   Playing with Toys
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Combinations.html">
+   Performing a Combination
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  More Information
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   HistFactory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WorkspaceManipulations.html">
+   Workspace Manipulations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Modifiers.html">
+   Modifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UsingCalculators.html">
+   Using Calculators
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Learn Fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="InterpolationCodes.html">
+   Piecewise Linear Interpolation
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/IntroToHiFa.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/issues/new?title=Issue%20on%20page%20%2FIntroToHiFa.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pyhf/tutorial-Reinterpretation-Forum-2021/edit/main/book/IntroToHiFa.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyhf/tutorial-Reinterpretation-Forum-2021/main?urlpath=lab/tree/book/IntroToHiFa.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/pyhf/tutorial-Reinterpretation-Forum-2021/blob/main/book/IntroToHiFa.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-analysis">
+   Statistical Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-binned">
+     Why Binned?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-the-ingredients">
+   What are the ingredients?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyhf">
+   pyhf
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="histfactory">
+<h1>HistFactory<a class="headerlink" href="#histfactory" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">pyhf</span></code> stands for <strong>py</strong>thon-based <strong>H</strong>ist<strong>F</strong>actory.</p>
+<p>It’s a tool for statistical analysis of data in High Energy Physics.</p>
+<p>In this chapter, we will cover</p>
+<ul class="simple">
+<li><p>What HistFactory is in general</p></li>
+<li><p>What pyhf is specifically (and what it is not)</p></li>
+</ul>
+<div class="section" id="statistical-analysis">
+<h2>Statistical Analysis<a class="headerlink" href="#statistical-analysis" title="Permalink to this headline">¶</a></h2>
+<p>We divide analyses into the type of fit being performed:</p>
+<ul class="simple">
+<li><p>unbinned analysis (based on individual observed events)</p></li>
+<li><p>binned analyses (based on aggregation of events)</p></li>
+</ul>
+<center>
+    <img alt="WHgamgam unbinned distribution" src="https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-23/fig_04d.png" width=300 style="display: inline" />
+    <img alt="SUSY MBJ binned distribution" src="https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2018-041/fig_08a.png" width=400 style="display: inline" />
+</center><p>Like HistFactory, <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> does not work with unbinned analyses. These will not be covered in the tutorial.</p>
+<p>So what uses HistFactory?</p>
+<ul class="simple">
+<li><p>TRexFitter</p></li>
+<li><p>WSMaker</p></li>
+<li><p>HistFitter</p></li>
+</ul>
+<p>Most everyone in SUSY and Exotics who performs an asymptotic fit as part of their analysis is likely using HistFactory!</p>
+<div class="section" id="why-binned">
+<h3>Why Binned?<a class="headerlink" href="#why-binned" title="Permalink to this headline">¶</a></h3>
+<p>Most likely, one performs a binned analysis if no functional form of the p.d.f. is known. Instead, you make approximations (re: educated guesses) as to this functional form through histograms.</p>
+<p>What is a histogram? Fundamentally, a histogram is a tool to bookkeep arrays of numbers:</p>
+<ul class="simple">
+<li><p>binning</p></li>
+<li><p>counts</p></li>
+<li><p>errors</p></li>
+</ul>
+<p>Beyond that, it contains lots of other magic ingredients to make them more user-friendly for common operations (addition, division, etc…).</p>
+</div>
+</div>
+<div class="section" id="what-are-the-ingredients">
+<h2>What are the ingredients?<a class="headerlink" href="#what-are-the-ingredients" title="Permalink to this headline">¶</a></h2>
+<p>Once you have a model, you can perform inference such as</p>
+<ul class="simple">
+<li><p>exclusion fit (upper limits)</p></li>
+<li><p>discovery fit (lower limits)</p></li>
+<li><p>measurement (two-sided intervals)</p></li>
+<li><p>parameter scans</p></li>
+<li><p>impact plots</p></li>
+<li><p>pull plots</p></li>
+<li><p>…</p></li>
+</ul>
+<img src="https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/README_1bin_example.png" alt="common operation - parameter scan" width=400 />
+<p>Let’s make up some samples and histograms to go along with it to understand what’s going on. Suppose we have an analysis with expected event rate <span class="math notranslate nohighlight">\(\lambda\)</span> and measurements <span class="math notranslate nohighlight">\(n\)</span>. For this incredibly simple case, the overall probability of the full experiment is the <strong>joint probability</strong> of each bin:</p>
+<div class="math notranslate nohighlight">
+\[
+p(n|\lambda) = \prod_{\mathrm{bin}\ b} \mathrm{Pois}(n_b | \lambda_b)
+\]</div>
+<p>Why Poisson? This is a counting experiment after all. A region we want to model will then just be a series of Poissons.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">observed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">expected_yields</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.7</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">expected_yields</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;expected&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;observed&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/IntroToHiFa_9_0.png" src="_images/IntroToHiFa_9_0.png" />
+</div>
+</div>
+<p>However, we don’t always often have just a single (MC) sample, and <span class="math notranslate nohighlight">\(\lambda\)</span> is often the sum of multiple sample yields</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = \sum_{\mathrm{sample}\ s} \lambda_s
+\]</div>
+<p>A typical case might be multiple (sub)dominant backgrounds or having a model where the observed events are described by a signal + background p.d.f. Then the p.d.f. might look like</p>
+<div class="math notranslate nohighlight">
+\[
+p(n|\lambda) = \prod_{\mathrm{bin}\ b} \mathrm{Pois}(n_b | \lambda_b) \qquad \lambda_b = \sum_{\mathrm{sample}\ s} \lambda_{bs}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">observed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">background</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">background</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$t\bar</span><span class="si">{t}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">bins</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;signal&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">background</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;observed&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/IntroToHiFa_12_0.png" src="_images/IntroToHiFa_12_0.png" />
+</div>
+</div>
+<p>Already, you can see the p.d.f. for this simple case starts expanding to be a little bit more generic, and a little bit more flexible. Now we want to incorporate when the expected yields for signal and backgrounds depend on some <strong>parameters</strong>, perhaps how we applied calibrations to some objects, or how we configured our Monte-Carlo generators, etc…</p>
+<p>Suppose we wanted a <span class="math notranslate nohighlight">\(\mu_s\)</span> that is a normalization factor scaling up (or down!) the sample. For example, if we want to parametrize the signal strength (without changing background). So <span class="math notranslate nohighlight">\(\lambda\)</span> becomes a function of <span class="math notranslate nohighlight">\(\theta = \{\mu\}\)</span> (a set of the parameters that determine the expected event rate), then our p.d.f. expands to be</p>
+<div class="math notranslate nohighlight">
+\[
+p(n|\lambda(\mu)) = \prod_{\mathrm{bin}\ b} \mathrm{Pois}(n_b | \lambda_b(\theta)) \qquad \lambda_b(\theta) = \sum_{\mathrm{sample}\ s} \lambda_{bs}(\theta)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu_{\mathrm{background}} = 1\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">draw_plot</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="n">observed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="n">background</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+    <span class="n">signal</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">mu</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;signal: </span><span class="si">{</span><span class="n">signal</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;background: </span><span class="si">{</span><span class="n">background</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;observed: </span><span class="si">{</span><span class="n">observed</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">background</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$t\bar</span><span class="si">{t}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">bins</span><span class="p">,</span>
+        <span class="n">signal</span><span class="p">,</span>
+        <span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;signal&quot;</span><span class="p">,</span>
+        <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="n">background</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;observed&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "223895376db0471d8354bcd4832fc0f4"}
+</script></div>
+</div>
+<p>One final thing to finish our build up of a simplified p.d.f. is about <strong>auxiliary measurements</strong>. What we mean is that perhaps the background sample is modeled by some normalization parameter, but we’ve also performed additional measurements in a separate analysis that constraints the parametrization (e.g. Jet Energy Scale) so we have stronger confidence that the true parameter is within a certain range.</p>
+<p>For some parameters in a statistical model, all we have to infer its values is the given analysis. These parameters are <strong>unconstrained</strong> (<span class="math notranslate nohighlight">\(\eta\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+p(n | \lambda(\theta))
+\]</div>
+<p>For many parameters, we have the <strong>auxiliary data</strong> (<span class="math notranslate nohighlight">\(a\)</span>) given as an <em>auxiliary measurement</em> which is added to the main p.d.f.. These parameters are <strong>constrained</strong> (<span class="math notranslate nohighlight">\(\chi\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[
+p_\chi(a | \chi)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta = \{\eta, \chi\}\)</span>. This constraining function can generally be anything, but most of the time in HistFactory - it’s a Gaussian or a Poisson. The p.d.f. expands to be</p>
+<div class="math notranslate nohighlight">
+\[
+p(n,a|\lambda(\theta)) = \prod_{\mathrm{bin}\ b} \mathrm{Pois}(n_b | \lambda_b(\theta)) \prod_{\mathrm{constraint}\ \chi} p_\chi(a_\chi | \chi) \qquad \lambda_b(\theta) = \sum_{\mathrm{sample}\ s} \lambda_{bs}(\theta)
+\]</div>
+<p>For this simple example, let’s consider a Gaussian centered at <span class="math notranslate nohighlight">\(\mu=0\)</span> with <span class="math notranslate nohighlight">\(\sigma=1\)</span> for constraining the normalization on the background where an up-variation (<span class="math notranslate nohighlight">\(\mu_b = +1\)</span>) scales by 1.3, and a down-variation (<span class="math notranslate nohighlight">\(\mu_b = -1\)</span>) scales by 0.8.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gaussian_constraint</span><span class="p">(</span><span class="n">mu_b</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">mu_b</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+
+<span class="c1"># interpolating</span>
+<span class="k">def</span> <span class="nf">interpolate</span><span class="p">(</span><span class="n">down</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">up</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">alpha</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">up</span> <span class="o">-</span> <span class="n">nom</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">down</span> <span class="o">-</span> <span class="n">nom</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span>
+
+
+<span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">mu_b</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">draw_plot</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mu_b</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="n">observed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="n">background</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">interpolate</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="n">mu_b</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
+    <span class="n">signal</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">mu</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;signal: </span><span class="si">{</span><span class="n">signal</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;background: </span><span class="si">{</span><span class="n">background</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;observed: </span><span class="si">{</span><span class="n">observed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;likelihood scaled by: </span><span class="si">{</span><span class="n">gaussian_constraint</span><span class="p">(</span><span class="n">mu_b</span><span class="p">)</span><span class="o">/</span><span class="n">gaussian_constraint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">background</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$t\bar</span><span class="si">{t}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">bins</span><span class="p">,</span>
+        <span class="n">signal</span><span class="p">,</span>
+        <span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;signal&quot;</span><span class="p">,</span>
+        <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="n">background</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;observed&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "e007a1fa139449da8c5c38ef62022e0a"}
+</script></div>
+</div>
+<p>But that’s not all! Notice that all along, we’ve been only discussing a single “channel” with 3 bins. The statistical analysis being studied might involve <strong>multiple channels</strong> corresponding to different signal regions and control regions. Therefore, we compute the likelihood as</p>
+<div class="math notranslate nohighlight">
+\[
+p_\text{main} = p_\text{channel1} * p_\text{channel2} * p_\text{channel3} \cdots
+\]</div>
+<p>So in fact, we can then expand out the likelihood definition further</p>
+<div class="math notranslate nohighlight">
+\[
+p(n,a|\theta) = \underbrace{\prod_{\mathrm{channel}\ c}\prod_{\mathrm{bin}\ b} \mathrm{Pois}(n_{cb} | \lambda_{cb}(\theta))}_{\text{main}} \underbrace{\prod_{\mathrm{constraint}\ \chi} p_\chi(a_\chi | \chi)}_{\text{auxiliary}} \qquad \lambda_{cb}(\theta) = \sum_{\mathrm{sample}\ s} \lambda_{cbs}(\theta)
+\]</div>
+<p>As you can see, this is sort of a bookkeeping problem. We have two pieces of this likelihood:</p>
+<ul class="simple">
+<li><p>our main model, which consists of</p>
+<ul>
+<li><p>several channels (regions, histograms, etc), where</p></li>
+<li><p>each channel is a set of simultaneous Poissons measuring the bin count against an expected value, where</p></li>
+<li><p>the expected value is the sum of various samples, where</p></li>
+<li><p>each samples expected value can be a function of parameters (or modifiers)</p></li>
+</ul>
+</li>
+<li><p>the constraint model, which consists of</p>
+<ul>
+<li><p>several auxiliary measurements, where</p></li>
+<li><p>each measurement comes with auxiliary data</p></li>
+</ul>
+</li>
+</ul>
+<p>It should be clear by now that this is quite a lot of pieces to keep track of. This is where HistFactory comes in to play. Using HistFactory, we can</p>
+<ul class="simple">
+<li><p>describe observed event rates and expected event rates</p></li>
+<li><p>use well-defined <strong>modifiers</strong> to express parameterizations of the expected event rates</p></li>
+<li><p>use well-defined <strong>interpolation</strong> mechanisms to derive expected event rates (if needed)</p></li>
+<li><p>automatically handle auxiliary measurements / additional constraint terms</p></li>
+</ul>
+<p><em>Note: if you’re curious about interpolation and interesting challenges, see the next chapter.</em></p>
+</div>
+<div class="section" id="pyhf">
+<h2>pyhf<a class="headerlink" href="#pyhf" title="Permalink to this headline">¶</a></h2>
+<p>Up to about 2 years ago, HistFactory was only implemented using ROOT, RooStats, RooFit (+ minuit). pyhf provides two separate pieces:</p>
+<ul class="simple">
+<li><p>a schema for serializing the HistFactory workspace in plain-text formats, such as JSON</p></li>
+<li><p>a toolkit that interacts and manipulates the HistFactory workspaces</p></li>
+</ul>
+<p>Why is this crucial? HistFactory in ROOT is a combination of loosely-linked XML+ROOT files</p>
+<ul class="simple">
+<li><p>XML for structure</p></li>
+<li><p>ROOT for storing data</p></li>
+</ul>
+<p>These would then be processed through a <code class="docutils literal notranslate"><span class="pre">hist2workspace</span></code> command to get the ROOT Workspace that RooStats/RooFit use. As an example, let’s look at the provided multichannel HistFactory XML+ROOT as part of this tutorial:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls -lhR data/multichannel_histfactory
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/multichannel_histfactory:
+total 8.0K
+drwxr-xr-x 2 runner docker 4.0K Feb 19 00:27 config
+drwxr-xr-x 2 runner docker 4.0K Feb 19 00:27 data
+
+data/multichannel_histfactory/config:
+total 20K
+-rw-r--r-- 1 runner docker 6.4K Feb 19 00:27 HistFactorySchema.dtd
+-rw-r--r-- 1 runner docker  906 Feb 19 00:27 example.xml
+-rw-r--r-- 1 runner docker  974 Feb 19 00:27 example_control.xml
+-rw-r--r-- 1 runner docker 1.1K Feb 19 00:27 example_signal.xml
+
+data/multichannel_histfactory/data:
+total 8.0K
+-rw-r--r-- 1 runner docker 5.9K Feb 19 00:27 data.root
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we have two folders:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code> which provides</p>
+<ul>
+<li><p>the XML HistFactory schema <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">HistFactorySchema.dtd</span></code></span></p></li>
+<li><p>a top-level <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">example.xml</span></code></span></p></li>
+<li><p>signal region and control region structures</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> which provides the stored histograms in <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">data.root</span></code></span></p></li>
+</ul>
+<p>Let’s just look at the XML structure for now. What does the top-level look like?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat -n data/multichannel_histfactory/config/example.xml
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     1	&lt;!--
+     2	//============================================================================
+     3	// Name        : example.xml
+     4	//============================================================================
+     5	--&gt;
+     6	
+     7	&lt;!--
+     8	    Top-level configuration,  details for the example channel are in example_channel.xml.
+     9	    This is the input file to the executable.
+    10	
+    11	    Note: Config.dtd needs to be accessible.  It can be found in ROOT release area.
+    12	    The file system path is relative to location of this XML file, not the executable.
+    13	--&gt;
+    14	
+    15	&lt;!DOCTYPE Combination  SYSTEM &#39;HistFactorySchema.dtd&#39;&gt;
+    16	
+    17	&lt;Combination OutputFilePrefix=&quot;./results/example&quot;&gt;
+    18	  &lt;Input&gt;./config/example_signal.xml&lt;/Input&gt;
+    19	  &lt;Input&gt;./config/example_control.xml&lt;/Input&gt;
+    20	  &lt;Measurement Name=&quot;GaussExample&quot; Lumi=&quot;1.&quot; LumiRelErr=&quot;0.1&quot; ExportOnly=&quot;True&quot;&gt;
+    21	    &lt;POI&gt;SigXsecOverSM&lt;/POI&gt;
+    22	    &lt;ParamSetting Const=&quot;True&quot;&gt;Lumi&lt;/ParamSetting&gt;
+    23	  &lt;/Measurement&gt;
+    24	&lt;/Combination&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This top-level specifies:</p>
+<ul class="simple">
+<li><p>15: the HistFactory XML schema</p></li>
+<li><p>17: the workspace definition</p></li>
+<li><p>18,19: channel definitions (links to other files)</p></li>
+<li><p>20: a measurement <code class="docutils literal notranslate"><span class="pre">GaussExample</span></code> with specifications for luminosity, the parameter of interest, and setting <code class="docutils literal notranslate"><span class="pre">lumi</span></code> constant</p></li>
+</ul>
+<p>What does the signal region look like?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat -n data/multichannel_histfactory/config/example_signal.xml
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     1	&lt;!--
+     2	    Single channel configuration exampple.
+     3	    The top level configuration XML is example.xml
+     4	
+     5	    NormalizedByTheory should be &quot;True&quot; (not &quot;TRUE&quot; or &quot;true&quot;) for all non-data-driven backgrounds.
+     6	
+     7	    If you comment or remove the &lt;Data&gt; tag then it will use the expected data.
+     8	
+     9	    Histogram inputs should be in pb and in top-level xml the lumi should be in 1/pb
+    10	    (The important thing is that they match... fb and 1/fb is also ok)
+    11	
+    12	    Note: Config.dtd needs to be accessible.  It can be found in ROOT release area.
+    13	    The file system path is relative to location of this XML file, not the executable.
+    14	--&gt;
+    15	
+    16	&lt;!DOCTYPE Channel  SYSTEM &#39;HistFactorySchema.dtd&#39;&gt;
+    17	
+    18	&lt;Channel Name=&quot;channel1&quot; InputFile=&quot;./data/data.root&quot; &gt;
+    19	  &lt;Data HistoName=&quot;signal_data&quot; HistoPath=&quot;&quot; /&gt;
+    20	  &lt;Sample Name=&quot;signal&quot; HistoPath=&quot;&quot; HistoName=&quot;signal_signal&quot;&gt;
+    21	    &lt;NormFactor Name=&quot;SigXsecOverSM&quot; Val=&quot;1&quot; Low=&quot;0.&quot; High=&quot;10.&quot;  /&gt;
+    22	  &lt;/Sample&gt;
+    23	  &lt;Sample Name=&quot;bkg&quot; HistoPath=&quot;&quot; NormalizeByTheory=&quot;True&quot; HistoName=&quot;signal_bkg&quot;&gt;
+    24	    &lt;ShapeSys Name=&quot;uncorrshape_signal&quot; HistoName=&quot;signal_bkgerr&quot; ConstraintType=&quot;Poisson&quot;/&gt;
+    25	  &lt;/Sample&gt;
+    26	&lt;/Channel&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This signal region specifies:</p>
+<ul class="simple">
+<li><p>16: the HistFactory XML schema</p></li>
+<li><p>18: the channel definition along with the path to the file for where the data for this channel is stored</p></li>
+<li><p>19: where the expected event rate (data) for this channel is located</p></li>
+<li><p>20, 23: sample definitions for <code class="docutils literal notranslate"><span class="pre">signal</span></code> and <code class="docutils literal notranslate"><span class="pre">bkg</span></code> with each sample expected event rate stored under <code class="docutils literal notranslate"><span class="pre">HistoName</span></code> in the corresponding ROOT file</p></li>
+<li><p>21: a parameter <code class="docutils literal notranslate"><span class="pre">SigXsecOverSM</span></code> which is an unconstrained normalization factor</p></li>
+<li><p>24: a parameter <code class="docutils literal notranslate"><span class="pre">uncorrshape_signal</span></code> which is a Poisson-constrained shape systematic, with the corresponding auxiliary data stored under <code class="docutils literal notranslate"><span class="pre">HistoName</span></code> in the corresponding ROOT file</p></li>
+</ul>
+<p>As you can see, this works fine. It’s a little bulky, and a lot of loosely-tied information, but this fulls specifies the HistFactory model we’ve discussed so far.</p>
+<p>In the next chapter, we’ll learn how to use <code class="docutils literal notranslate"><span class="pre">pyhf</span></code> to convert to the HistFactory JSON representation.</p>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"16c0edc51a7c4dfbaa61796f2619082b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "223895376db0471d8354bcd4832fc0f4": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_a601803c9f2c45aea24ca150503a846d", "IPY_MODEL_633ceb94a1d74028bdd5caba34837762"], "layout": "IPY_MODEL_16c0edc51a7c4dfbaa61796f2619082b"}}, "0c865569304d4720a8c6ab089ebe49e9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "694f7405341c40c8941feee77107c895": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "a601803c9f2c45aea24ca150503a846d": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "mu", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_0c865569304d4720a8c6ab089ebe49e9", "max": 5.0, "min": 0.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_694f7405341c40c8941feee77107c895", "value": 1.0}}, "a8a48c8663224c45a194fe8e75897923": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "633ceb94a1d74028bdd5caba34837762": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_a8a48c8663224c45a194fe8e75897923", "msg_id": "", "outputs": [{"output_type": "stream", "name": "stdout", "text": "signal: [0.7, 1.7, 1.5]\nbackground: [3.0, 1.5, 1.0]\nobserved: [3, 4, 4]\n\n"}, {"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "iVBORw0KGgoAAAANSUhEUgAAAWoAAAD8CAYAAABekO4JAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAWK0lEQVR4nO3df3BV5Z3H8c83kBoDGATRKgiBrUBiEhAC0gKWhda6VijUVLHALijNjDusOlZahYpsO+l0bKXWH6PLaHddDRWXHyLW+hNbSKsiIL8E3XE7QAMWASEmBFpSvvtHLik/AvckuTf3ueH9mrnjufc89/B97kk+PnnOOfeYuwsAEK6MVBcAADgzghoAAkdQA0DgCGoACBxBDQCBI6gBIHCRgtrMOpvZIjP7wMy2mtkXk10YAKBe+4jtfiHpZXcvMbPPScpOYk0AgONYvAtezCxH0npJfZyrYwCg1UUZUfeWtEfSf5rZAElrJd3u7gePb2RmpZJKJalDhw6D+/fvn+haAaDNWrt27V5379bYuigj6mJJb0sa7u7vmNkvJH3m7vee7j3FxcW+Zs2altQMAGcVM1vr7sWNrYtyMLFSUqW7vxN7vkjSoEQVBwA4s7hB7e5/lvQnM+sXe2mMpC1JrQoA0CDqWR//Jqk8dsbHHyVNS15JAIDjRQpqd18vqdG5EwBnjyNHjqiyslKHDx9OdSlpKysrSz169FBmZmbk90QdUQOAKisr1alTJ+Xm5srMUl1O2nF37du3T5WVlerdu3fk93EJOYDIDh8+rK5duxLSzWRm6tq1a5P/IiGoATQJId0yzfn8CGoACBxBDSDtbdu2TQUFBaku4xSjRo1SIi7+I6gBoBF1dXWpLqEBQQ0gacrLy5Wbm6uMjAzl5uaqvLw8IdudN2+eCgoKVFBQoAcffFBSfbBOmjRJeXl5KikpUW1trSTp7rvvVn5+voqKinTXXXdJkvbs2aPrr79eQ4YM0ZAhQ/T73/9ekjR37lxNmTJFw4cP15QpUzRs2DC9//77Df/usRHywYMHdfPNN2vo0KG64oortGzZMknSoUOHNHHiROXl5WnChAk6dOhQQvord0/4Y/DgwQ6g7dmyZUvkts8884xnZ2e7pIZHdna2P/PMMy2qYc2aNV5QUOA1NTVeXV3t+fn5vm7dOpfkFRUV7u4+bdo0/+lPf+p79+71vn37+tGjR93dff/+/e7uftNNN/mqVavc3X379u3ev39/d3e/7777fNCgQV5bW+vu7vPmzfM5c+a4u/uuXbu8b9++7u5+zz33+NNPP92wzcsuu8xramr8gQce8GnTprm7+4YNG7xdu3b+7rvvntKHxj5HSWv8NJnKiBpAUsyePbthVHtMbW2tZs+e3aLtVlRUaMKECerQoYM6duyob37zm1q1apUuvfRSDR8+XJI0efJkVVRUKCcnR1lZWbrlllu0ZMkSZWfXf5X+66+/rhkzZmjgwIEaN26cPvvsM9XU1EiSxo0bp3PPPVeSdMMNN2jRokWSpOeee04lJSWSpFdffVU/+clPNHDgQI0aNUqHDx/Wjh07tHLlSk2ePFmSVFRUpKKiohb19RgueAGQFDt27GjS6y118mlvZqb27dtr9erVeuONN7Ro0SI98sgjWrFihY4ePaq3335bWVlZp2ynQ4cODcvdu3dX165dtXHjRi1cuFCPP/64pPqZiMWLF6tfv36nvD8ZGFEDSIqePXs26fWoRo4cqeeff161tbU6ePCgli5dqpEjR2rHjh166623JEkLFizQiBEjVFNTo6qqKl177bX6+c9/rg0bNkiSrr76aj388MMN21y/fv1p/70bb7xR999/v6qqqhpGyF/72tf08MMPy2NfE/3ee+9Jkq666iotWLBAkrR582Zt3LixRX09hqAGkBRlZWUNUw3HZGdnq6ysrEXbHTRokKZOnaqhQ4fqyiuv1PTp03X++eerX79+evTRR5WXl6f9+/fr1ltvVXV1ta677joVFRVpxIgRmjdvniTpoYce0po1a1RUVKT8/PyGkXJjSkpK9Oyzz+qGG25oeO3ee+/VkSNHVFRUpMsvv1z33lv/9fy33nqrampqlJeXpzlz5mjw4MEt6usxcW8c0BzcOABom7Zu3aq8vLzI7cvLyzV79mzt2LFDPXv2VFlZmSZNmpTECtNDY5/jmW4cwBw1gKSZNGkSwZwATH0AQOAIagAIHEENAIEjqAEgcAQ1AASOsz4ApLWRI0equrpa7du3T8hXioaIoAaQ1latWpXqEpKOqQ8ACBxBDSDtVFZWauHChacst1VMfQBotv0/vl81f96bsO11/PwFOn/W9+K2e+ONN7RlyxbdeOONJyy3VQQ1gGar+fNeLRo7PWHbK1n+hM6P06aiokJ33nmnOnfurAceeECdOnVSly5d9Morr2jJkiXq06dPwuoJBVMfANLKiBEjNGTIEC1btkx1dXW68sortWzZMq1fv75NhrREUANIQx9++KH69+9/ynJbFWnqw8y2SaqW9DdJdaf7Kj4ASLa9e/cqJydH7du3P2G5LWtK7/7R3RN31AAAmmHbtm265JJLTlluy5j6AJBW+vfvr71796qgoEC1tbUNy3/4wx9SXVrSRB1Ru6RXzcwl/Ye7z09iTQDSRMfPX6CS5U8kdHtx23TsqNWrVzc8P365rYoa1CPcfaeZXSjpNTP7wN1XHt/AzEollUotv3klgPRw/qzvxT2dDi0XaerD3XfG/vuJpKWShjbSZr67F7t7cbdu3RJbJQCcxeIGtZl1MLNOx5YlXS1pc7ILAwDUizL1cZGkpWZ2rP0Cd385qVUBABrEDWp3/6OkAa1QCwCgEZyeBwCBI6gBIHBt+7pLAEn14I8/1YHd1QnbXueLOumOWV2a/L7p06frzjvvVH5+fsJqkerP2a6pqUnoNpuDoAbQbAd2V2vu+AUJ297c578tqelB/cQTibvoJkRMfQBIKwcPHtTXv/51DRgwQAUFBVq4cKFGjRrVcGPbJ598Un379tXQoUP1ne98RzNmzJAkTZ06Vbfddpu+9KUvqU+fPlq0aJEkqaamRmPGjNGgQYNUWFioZcuWpaxvp8OIGkBaefnll3XJJZfo17/+tSSpqqpKjz32mCRp165d+tGPfqR169apU6dOGj16tAYM+PtJax9//LEqKir0wQcfaNy4cSopKVFWVpaWLl2q8847T3v37tWwYcM0btw4xU5JDgIjagBppbCwUK+99pq+//3va9WqVcrJyWlYt3r1an35y19Wly5dlJmZqW9961snvHf8+PHKyMhQfn6+du/eLUlyd82aNUtFRUX6yle+op07dzasCwUjagBppW/fvlq3bp1eeukl/eAHP9CYMWMiv/ecc85pWHZ3SVJ5ebn27NmjtWvXKjMzU7m5uTp8+HDC624JRtQA0squXbuUnZ2tyZMna+bMmVq3bl3DuiFDhuh3v/ud9u/fr7q6Oi1evDju9qqqqnThhRcqMzNTb775prZv357M8puFETWAZut8UafYmRqJ2148mzZt0syZM5WRkaHMzEw99thjuuuuuyRJ3bt316xZszR06FB16dJF/fv3P2FqpDGTJk3S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\n"}}]}}, "2ffcd17d48c34a5aaaea28aa7deb5f96": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e007a1fa139449da8c5c38ef62022e0a": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_536bafca67dc4e779f20936fb7a7e8b3", "IPY_MODEL_8b84e0535e574832909deff09420779a", "IPY_MODEL_fdc71e8ec22149c29af27f5c66d94b32"], "layout": "IPY_MODEL_2ffcd17d48c34a5aaaea28aa7deb5f96"}}, "6e1f9e31482447c2a12d55c060d15c54": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "267e84152f7741b7be848fa1191b484a": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "536bafca67dc4e779f20936fb7a7e8b3": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "mu", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_6e1f9e31482447c2a12d55c060d15c54", "max": 5.0, "min": 0.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_267e84152f7741b7be848fa1191b484a", "value": 1.0}}, "14333ba9097c4e60998e3b60e5879774": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "318c959509d349baaf398fb4c3879980": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "8b84e0535e574832909deff09420779a": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "mu_b", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_14333ba9097c4e60998e3b60e5879774", "max": 1.0, "min": -1.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_318c959509d349baaf398fb4c3879980", "value": 0.0}}, "c7acdf8fa553463385629f76065d19c1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fdc71e8ec22149c29af27f5c66d94b32": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_c7acdf8fa553463385629f76065d19c1", "msg_id": "", "outputs": [{"output_type": "stream", "name": "stdout", "text": "signal: [0.7, 1.7, 1.5]\nbackground: [3.0, 1.5, 1.0]\nobserved: [3, 4, 4]\nlikelihood scaled by: 1.0\n\n"}, {"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "iVBORw0KGgoAAAANSUhEUgAAAWoAAAD8CAYAAABekO4JAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAWK0lEQVR4nO3df3BV5Z3H8c83kBoDGATRKgiBrUBiEhAC0gKWhda6VijUVLHALijNjDusOlZahYpsO+l0bKXWH6PLaHddDRWXHyLW+hNbSKsiIL8E3XE7QAMWASEmBFpSvvtHLik/AvckuTf3ueH9mrnjufc89/B97kk+PnnOOfeYuwsAEK6MVBcAADgzghoAAkdQA0DgCGoACBxBDQCBI6gBIHCRgtrMOpvZIjP7wMy2mtkXk10YAKBe+4jtfiHpZXcvMbPPScpOYk0AgONYvAtezCxH0npJfZyrYwCg1UUZUfeWtEfSf5rZAElrJd3u7gePb2RmpZJKJalDhw6D+/fvn+haAaDNWrt27V5379bYuigj6mJJb0sa7u7vmNkvJH3m7vee7j3FxcW+Zs2altQMAGcVM1vr7sWNrYtyMLFSUqW7vxN7vkjSoEQVBwA4s7hB7e5/lvQnM+sXe2mMpC1JrQoA0CDqWR//Jqk8dsbHHyVNS15JAIDjRQpqd18vqdG5EwBnjyNHjqiyslKHDx9OdSlpKysrSz169FBmZmbk90QdUQOAKisr1alTJ+Xm5srMUl1O2nF37du3T5WVlerdu3fk93EJOYDIDh8+rK5duxLSzWRm6tq1a5P/IiGoATQJId0yzfn8CGoACBxBDSDtbdu2TQUFBaku4xSjRo1SIi7+I6gBoBF1dXWpLqEBQQ0gacrLy5Wbm6uMjAzl5uaqvLw8IdudN2+eCgoKVFBQoAcffFBSfbBOmjRJeXl5KikpUW1trSTp7rvvVn5+voqKinTXXXdJkvbs2aPrr79eQ4YM0ZAhQ/T73/9ekjR37lxNmTJFw4cP15QpUzRs2DC9//77Df/usRHywYMHdfPNN2vo0KG64oortGzZMknSoUOHNHHiROXl5WnChAk6dOhQQvord0/4Y/DgwQ6g7dmyZUvkts8884xnZ2e7pIZHdna2P/PMMy2qYc2aNV5QUOA1NTVeXV3t+fn5vm7dOpfkFRUV7u4+bdo0/+lPf+p79+71vn37+tGjR93dff/+/e7uftNNN/mqVavc3X379u3ev39/d3e/7777fNCgQV5bW+vu7vPmzfM5c+a4u/uuXbu8b9++7u5+zz33+NNPP92wzcsuu8xramr8gQce8GnTprm7+4YNG7xdu3b+7rvvntKHxj5HSWv8NJnKiBpAUsyePbthVHtMbW2tZs+e3aLtVlRUaMKECerQoYM6duyob37zm1q1apUuvfRSDR8+XJI0efJkVVRUKCcnR1lZWbrlllu0ZMkSZWfXf5X+66+/rhkzZmjgwIEaN26cPvvsM9XU1EiSxo0bp3PPPVeSdMMNN2jRokWSpOeee04lJSWSpFdffVU/+clPNHDgQI0aNUqHDx/Wjh07tHLlSk2ePFmSVFRUpKKiohb19RgueAGQFDt27GjS6y118mlvZqb27dtr9erVeuONN7Ro0SI98sgjWrFihY4ePaq3335bWVlZp2ynQ4cODcvdu3dX165dtXHjRi1cuFCPP/64pPqZiMWLF6tfv36nvD8ZGFEDSIqePXs26fWoRo4cqeeff161tbU6ePCgli5dqpEjR2rHjh166623JEkLFizQiBEjVFNTo6qqKl177bX6+c9/rg0bNkiSrr76aj388MMN21y/fv1p/70bb7xR999/v6qqqhpGyF/72tf08MMPy2NfE/3ee+9Jkq666iotWLBAkrR582Zt3LixRX09hqAGkBRlZWUNUw3HZGdnq6ysrEXbHTRokKZOnaqhQ4fqyiuv1PTp03X++eerX79+evTRR5WXl6f9+/fr1ltvVXV1ta677joVFRVpxIgRmjdvniTpoYce0po1a1RUVKT8/PyGkXJjSkpK9Oyzz+qGG25oeO3ee+/VkSNHVFRUpMsvv1z33lv/9fy33nqrampqlJeXpzlz5mjw4MEt6usxcW8c0BzcOABom7Zu3aq8vLzI7cvLyzV79mzt2LFDPXv2VFlZmSZNmpTECtNDY5/jmW4cwBw1gKSZNGkSwZwATH0AQOAIagAIHEENAIEjqAEgcAQ1AASOsz4ApLWRI0equrpa7du3T8hXioaIoAaQ1latWpXqEpKOqQ8ACBxBDSDtVFZWauHChacst1VMfQBotv0/vl81f96bsO11/PwFOn/W9+K2e+ONN7RlyxbdeOONJyy3VQQ1gGar+fNeLRo7PWHbK1n+hM6P06aiokJ33nmnOnfurAceeECdOnVSly5d9Morr2jJkiXq06dPwuoJBVMfANLKiBEjNGTIEC1btkx1dXW68sortWzZMq1fv75NhrREUANIQx9++KH69+9/ynJbFWnqw8y2SaqW9DdJdaf7Kj4ASLa9e/cqJydH7du3P2G5LWtK7/7R3RN31AAAmmHbtm265JJLTlluy5j6AJBW+vfvr71796qgoEC1tbUNy3/4wx9SXVrSRB1Ru6RXzcwl/Ye7z09iTQDSRMfPX6CS5U8kdHtx23TsqNWrVzc8P365rYoa1CPcfaeZXSjpNTP7wN1XHt/AzEollUotv3klgPRw/qzvxT2dDi0XaerD3XfG/vuJpKWShjbSZr67F7t7cbdu3RJbJQCcxeIGtZl1MLNOx5YlXS1pc7ILAwDUizL1cZGkpWZ2rP0Cd385qVUBABrEDWp3/6OkAa1QCwCgEZyeBwCBI6gBIHBt+7pLAEn14I8/1YHd1QnbXueLOumOWV2a/L7p06frzjvvVH5+fsJqkerP2a6pqUnoNpuDoAbQbAd2V2vu+AUJ297c578tqelB/cQTibvoJkRMfQBIKwcPHtTXv/51DRgwQAUFBVq4cKFGjRrVcGPbJ598Un379tXQoUP1ne98RzNmzJAkTZ06Vbfddpu+9KUvqU+fPlq0aJEkqaamRmPGjNGgQYNUWFioZcuWpaxvp8OIGkBaefnll3XJJZfo17/+tSSpqqpKjz32mCRp165d+tGPfqR169apU6dOGj16tAYM+PtJax9//LEqKir0wQcfaNy4cSopKVFWVpaWLl2q8847T3v37tWwYcM0btw4xU5JDgIjagBppbCwUK+99pq+//3va9WqVcrJyWlYt3r1an35y19Wly5dlJmZqW9961snvHf8+PHKyMhQfn6+du/eLUlyd82aNUtFRUX6yle+op07dzasCwUjagBppW/fvlq3bp1eeukl/eAHP9CYMWMiv/ecc85pWHZ3SVJ5ebn27NmjtWvXKjMzU7m5uTp8+HDC624JRtQA0squXbuUnZ2tyZMna+bMmVq3bl3DuiFDhuh3v/ud9u/fr7q6Oi1evDju9qqqqnThhRcqMzNTb775prZv357M8puFETWAZut8UafYmRqJ2148mzZt0syZM5WRkaHMzEw99thjuuuuuyRJ3bt316xZszR06FB16dJF/fv3P2FqpDGTJk3S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\n"}}]}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Combinations.html" title="previous page">Performing a Combination</a>
+    <a class='right-next' id="next-link" href="WorkspaceManipulations.html" title="next page">Workspace Manipulations</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By the pyhf development team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
